@@ -6,5 +6,5 @@ import { Component } from '@angular/core';
   styleUrls: ['./menubar.component.css']
 })
 export class MenubarComponent {
-
+  showFiller = false;
 }

@@ -1,5 +1,16 @@
-<mat-toolbar color="primary" class="mat-elevation-z6">
-  <button mat-icon-button>
+
+<mat-drawer-container class="example-container" autosize>
+  <mat-drawer #drawer class="example-sidenav" mode="side">
+    <mat-list role="list">
+      <mat-list-item role="listitem"><button style="color: aliceblue;" mat-button>Home</button></mat-list-item>
+      <mat-list-item role="listitem"><button style="color: aliceblue;"  mat-button>Contact</button></mat-list-item>
+      <mat-list-item role="listitem"><button style="color: aliceblue;"  mat-button>About</button></mat-list-item>
+    </mat-list>
+    
+  </mat-drawer>
+
+  <mat-toolbar color="primary" class="mat-elevation-z6">
+  <button mat-icon-button (click)="drawer.toggle()" >
     <mat-icon>menu</mat-icon>
   </button>
   <span>9ari chwiya</span>

@@ -10,6 +10,8 @@ import {MatIconModule} from "@angular/material/icon";
 import {MatAutocompleteModule} from "@angular/material/autocomplete";
 import {MatToolbarModule} from "@angular/material/toolbar";
 import { MenubarComponent } from './menubar/menubar.component';
+import {MatSidenavModule} from '@angular/material/sidenav';
+import {MatListModule} from '@angular/material/list';
 
 @NgModule({
   declarations: [
@@ -18,6 +20,8 @@ import { MenubarComponent } from './menubar/menubar.component';
     MenubarComponent
   ],
   imports: [
+    MatListModule,
+    MatSidenavModule,
     BrowserModule,
     AppRoutingModule,
     MatToolbarModule,
