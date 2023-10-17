@@ -2,8 +2,8 @@
   flex: 1 1 auto;
   
 }
-.mat-button{
-  color: aliceblue;
+.sideBareButton{
+  color: rgb(255, 255, 255);
 }
 .example-container {
   width: 100%;
