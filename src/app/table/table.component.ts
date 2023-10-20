@@ -59,6 +59,14 @@ export class TableComponent implements AfterViewInit , OnInit{
       this._liveAnnouncer.announce('Sorting cleared');
     }
   }
+  applyFilter(event: Event) {
+    const filterValue = (event.target as HTMLInputElement).value;
+    this.dataSource.filter = filterValue.trim().toLowerCase();
+
+    if (this.dataSource.paginator) {
+      this.dataSource.paginator.firstPage();
+    }
+  }
 }
 
 

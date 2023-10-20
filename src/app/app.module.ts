@@ -14,15 +14,21 @@ import {MatSidenavModule} from '@angular/material/sidenav';
 import {MatListModule} from '@angular/material/list';
 import { TableComponent } from './table/table.component';
 import { MatSortModule } from '@angular/material/sort';
+import {MatCardModule} from '@angular/material/card';
+import { CardComponent } from './card/card.component';
+import {MatInputModule} from '@angular/material/input';
 
 @NgModule({
   declarations: [
     AppComponent,
     MenubarComponent,
-    TableComponent
+    TableComponent,
+    CardComponent
     
   ],
   imports: [
+    MatInputModule,
+    MatCardModule,
     MatSortModule,
     MatTableModule,
     MatListModule,

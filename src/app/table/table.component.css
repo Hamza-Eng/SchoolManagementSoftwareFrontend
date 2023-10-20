@@ -1,4 +1,8 @@
-table {
+table .searchInput{
+    width: 100%;
+  }
+.searchInput{
+  margin-top: 10%;
     width: 100%;
   }
   

@@ -1,3 +1,7 @@
+<mat-form-field class="searchInput">
+  <mat-label>Search</mat-label>
+  <input matInput (keyup)="applyFilter($event)" placeholder="Ex. Mia" #input>
+</mat-form-field>
 <table mat-table [dataSource]="dataSource" matSort (matSortChange)="announceSortChange($event)"
        class="mat-elevation-z8">
        
