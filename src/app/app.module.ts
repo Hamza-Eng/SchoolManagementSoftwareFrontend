@@ -17,6 +17,7 @@ import { MatSortModule } from '@angular/material/sort';
 import {MatCardModule} from '@angular/material/card';
 import { CardComponent } from './card/card.component';
 import {MatInputModule} from '@angular/material/input';
+import { HttpClient, HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -27,6 +28,7 @@ import {MatInputModule} from '@angular/material/input';
     
   ],
   imports: [
+    HttpClientModule,
     MatInputModule,
     MatCardModule,
     MatSortModule,

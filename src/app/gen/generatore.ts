@@ -1,8 +1,9 @@
 export interface  servicegeneratore
 {
-    getById() : String;
+    getById(id : number) : any;
     findAll()  : any;
-    saveOrUpdate ()  : any;
-    deleteById () : boolean;
+    saveOrUpdate (data: any)  : any;
+    deleteById (id : number) : any;
     deleteAll ()  : any;
+    url : any;
 }
