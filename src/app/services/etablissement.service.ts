@@ -3,20 +3,17 @@ import { Injectable } from '@angular/core';
 import { servicegeneratore } from '../gen/generatore';
 interface MyInterface {
   
-  getById() : String;
-  findAll()  : any;
-  saveOrUpdate ()  : any;
-  deleteById () : boolean;
-  deleteAll ()  : any;
+ 
 
 }
 @Injectable({
   providedIn: 'root'
 })
 
-export class EtablissementService implements MyInterface{
-
-  constructor() { http:HttpClient}
+export class EtablissementService implements servicegeneratore{
+  getById(): String {
+    throw new Error('Method not implemented.');
+  }
   findAll() {
     throw new Error('Method not implemented.');
   }
@@ -29,13 +26,8 @@ export class EtablissementService implements MyInterface{
   deleteAll() {
     throw new Error('Method not implemented.');
   }
-  FindAll(): any {
-    throw new Error('Method not implemented.');
-  }
-  getById(): String {
-    throw new Error('Method not implemented.');
-  }
-  
+
+ 
   
   
 
