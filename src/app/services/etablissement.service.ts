@@ -11,7 +11,7 @@ export class EtablissementService implements servicegeneratore{
   constructor(private http: HttpClient) {
   }
   url: string=environment.url+"etablissement/";
-  
+
   getById(id:number) {
     this.http.get(this.url+"findById/"+id).subscribe(data => {
       console.log(data);
@@ -41,7 +41,4 @@ export class EtablissementService implements servicegeneratore{
       
      });
   }
-  
-  
-
 }
