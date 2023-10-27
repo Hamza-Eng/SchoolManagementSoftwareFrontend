@@ -2,7 +2,7 @@ import {LiveAnnouncer} from '@angular/cdk/a11y';
 import {AfterViewInit,OnInit, Component, ViewChild} from '@angular/core';
 import {MatSort, Sort} from '@angular/material/sort';
 import {MatTableDataSource} from '@angular/material/table';
-import { EtablissementService } from '../services/etablissement.service';
+import { EtablissementService } from '../../services/etablissement.service';
 
 export interface PeriodicElement {
   name: string;

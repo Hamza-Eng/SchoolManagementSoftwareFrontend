@@ -9,15 +9,17 @@ import {MatButtonModule} from "@angular/material/button";
 import {MatIconModule} from "@angular/material/icon";
 import {MatAutocompleteModule} from "@angular/material/autocomplete";
 import {MatToolbarModule} from "@angular/material/toolbar";
-import { MenubarComponent } from './menubar/menubar.component';
+
 import {MatSidenavModule} from '@angular/material/sidenav';
 import {MatListModule} from '@angular/material/list';
-import { TableComponent } from './table/table.component';
+import { TableComponent } from './utility/table/table.component';
 import { MatSortModule } from '@angular/material/sort';
 import {MatCardModule} from '@angular/material/card';
-import { CardComponent } from './card/card.component';
+
 import {MatInputModule} from '@angular/material/input';
 import { HttpClient, HttpClientModule } from '@angular/common/http';
+import { MenubarComponent } from './utility/menubar/menubar.component';
+import { CardComponent } from './utility/card/card.component';
 
 @NgModule({
   declarations: [
@@ -25,6 +27,7 @@ import { HttpClient, HttpClientModule } from '@angular/common/http';
     MenubarComponent,
     TableComponent,
     CardComponent
+    
     
   ],
   imports: [
