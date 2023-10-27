@@ -20,13 +20,15 @@ import {MatInputModule} from '@angular/material/input';
 import { HttpClient, HttpClientModule } from '@angular/common/http';
 import { MenubarComponent } from './utility/menubar/menubar.component';
 import { CardComponent } from './utility/card/card.component';
+import { CenterComponent } from './component/center/center.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     MenubarComponent,
     TableComponent,
-    CardComponent
+    CardComponent,
+    CenterComponent
     
     
   ],
