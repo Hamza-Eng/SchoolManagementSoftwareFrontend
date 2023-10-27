@@ -1,4 +1,6 @@
+import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
+import { environment } from 'src/environments/environment';
 import { servicegeneratore } from '../genertore/generatore';
 
 @Injectable({
@@ -6,22 +8,38 @@ import { servicegeneratore } from '../genertore/generatore';
 })
 export class EstablishmentService implements servicegeneratore{
 
-  constructor() { }
-  getById(id: number) {
-    throw new Error('Method not implemented.');
+  constructor(private http: HttpClient) {
   }
+  url: string=environment.url+"etablissement/";
+
+  getById(id:number) {
+    this.http.get(this.url+"findById/"+id).subscribe(data => {
+      console.log(data);
+      
+    });
+    }
   findAll() {
-    throw new Error('Method not implemented.');
+    this.http.get(this.url+"findAll").subscribe(data => {
+      console.log(data);
+      
+    });
   }
   saveOrUpdate(data: any) {
-    throw new Error('Method not implemented.');
+    this.http.post(this.url+"saveorupdate", data).subscribe(response => {
+      console.log(response);
+    });
   }
-  deleteById(id: number) {
-    throw new Error('Method not implemented.');
+  deleteById(id : number) {
+    this.http.delete(this.url+"delete/"+id).subscribe(response => {
+     console.log(response);
+     
+    });
   }
   deleteAll() {
-    throw new Error('Method not implemented.');
+    this.http.delete(this.url+"deleteAll").subscribe(response => {
+      console.log(response);
+      
+     });
   }
-  url: any;
 }
 

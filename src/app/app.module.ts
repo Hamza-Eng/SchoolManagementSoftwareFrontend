@@ -12,15 +12,19 @@ import {MatToolbarModule} from "@angular/material/toolbar";
 
 import {MatSidenavModule} from '@angular/material/sidenav';
 import {MatListModule} from '@angular/material/list';
-import { TableComponent } from './utility/table/table.component';
 import { MatSortModule } from '@angular/material/sort';
 import {MatCardModule} from '@angular/material/card';
 
 import {MatInputModule} from '@angular/material/input';
-import { HttpClient, HttpClientModule } from '@angular/common/http';
+import { HttpClientModule } from '@angular/common/http';
 import { MenubarComponent } from './utility/menubar/menubar.component';
 import { CardComponent } from './utility/card/card.component';
 import { CenterComponent } from './component/center/center.component';
+import { TableComponent } from './utility/table/table.component';
+import { EstablishmentComponent } from './component/establishment/establishment.component';
+import { CycleComponent } from './component/cycle/cycle.component';
+import { BranchComponent } from './component/branch/branch.component';
+import { StudentComponent } from './component/student/student.component';
 
 @NgModule({
   declarations: [
@@ -28,7 +32,11 @@ import { CenterComponent } from './component/center/center.component';
     MenubarComponent,
     TableComponent,
     CardComponent,
-    CenterComponent
+    CenterComponent,
+    EstablishmentComponent,
+    CycleComponent,
+    BranchComponent,
+    StudentComponent
     
     
   ],
