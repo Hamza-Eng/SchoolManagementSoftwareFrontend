@@ -2,7 +2,8 @@ import {LiveAnnouncer} from '@angular/cdk/a11y';
 import {AfterViewInit,OnInit, Component, ViewChild} from '@angular/core';
 import {MatSort, Sort} from '@angular/material/sort';
 import {MatTableDataSource} from '@angular/material/table';
-import { EtablissementService } from '../../services/etablissement.service';
+import { EstablishmentService } from 'src/app/services/establishment.service';
+
 
 export interface PeriodicElement {
   name: string;
@@ -35,7 +36,7 @@ export class TableComponent implements AfterViewInit , OnInit{
   displayedColumns: string[] = ['position', 'name', 'weight', 'symbol'];
   dataSource = new MatTableDataSource(ELEMENT_DATA);
 
-  constructor(private _liveAnnouncer: LiveAnnouncer,private etablisment:EtablissementService) {}
+  constructor(private _liveAnnouncer: LiveAnnouncer,private etablisment:EstablishmentService) {}
   ngOnInit(): void {
     this.dataSource.sort = this.sort;
 console.log(    this.etablisment.findAll());
