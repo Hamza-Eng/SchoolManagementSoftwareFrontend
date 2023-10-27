@@ -21,6 +21,10 @@ import { MenubarComponent } from './utility/menubar/menubar.component';
 import { CardComponent } from './utility/card/card.component';
 import { CenterComponent } from './component/center/center.component';
 import { TableComponent } from './utility/table/table.component';
+import { EstablishmentComponent } from './component/establishment/establishment.component';
+import { CycleComponent } from './component/cycle/cycle.component';
+import { BranchComponent } from './component/branch/branch.component';
+import { StudentComponent } from './component/student/student.component';
 
 @NgModule({
   declarations: [
@@ -28,7 +32,11 @@ import { TableComponent } from './utility/table/table.component';
     MenubarComponent,
     TableComponent,
     CardComponent,
-    CenterComponent
+    CenterComponent,
+    EstablishmentComponent,
+    CycleComponent,
+    BranchComponent,
+    StudentComponent
     
     
   ],
