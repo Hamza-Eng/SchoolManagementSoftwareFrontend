@@ -1,14 +1,20 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { MenubarComponent } from './utility/menubar/menubar.component';
+import { BranchComponent } from './component/branch/branch.component';
+import { CenterComponent } from './component/center/center.component';
+import { ClassesComponent } from './component/classes/classes.component';
+import { CycleComponent } from './component/cycle/cycle.component';
+import { EstablishmentComponent } from './component/establishment/establishment.component';
+import { StudentComponent } from './component/student/student.component';
 
 const routes: Routes = [
-  {path:"home",component:MenubarComponent},
-  {path:"center",component:MenubarComponent},
-  {path:"cycle",component:MenubarComponent},
-  {path:"student",component:MenubarComponent},
-  {path:"establishment",component:MenubarComponent},
-  {path:"branch",component:MenubarComponent},
+  {path:"home",redirectTo : "/"},
+  {path:"center",component:CenterComponent},
+  {path:"cycle",component:CycleComponent},
+  {path:"student",component:StudentComponent},
+  {path:"class",component:ClassesComponent},
+  {path:"establishment",component:EstablishmentComponent},
+  {path:"branch",component:BranchComponent},
   {path:"**",redirectTo : "home"},
   
 ];
