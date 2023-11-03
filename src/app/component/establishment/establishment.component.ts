@@ -1,4 +1,6 @@
 import { Component } from '@angular/core';
+import { MatTableDataSource } from '@angular/material/table';
+import { PeriodicElement } from 'src/app/utility/table/table.component';
 
 @Component({
   selector: 'app-establishment',
@@ -6,5 +8,7 @@ import { Component } from '@angular/core';
   styleUrls: ['./establishment.component.css']
 })
 export class EstablishmentComponent {
+  constructor(){
 
+  }
 }
