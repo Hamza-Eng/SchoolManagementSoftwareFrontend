@@ -1,11 +1,11 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { BranchComponent } from './component/branch/branch.component';
-import { CenterComponent } from './component/center/center.component';
-import { ClassesComponent } from './component/classes/classes.component';
-import { CycleComponent } from './component/cycle/cycle.component';
-import { EstablishmentComponent } from './component/establishment/establishment.component';
-import { StudentComponent } from './component/student/student.component';
+import { BranchComponent } from './branch/component/branch.component';
+import { CenterComponent } from './center/component/center.component';
+import { ClassesComponent } from './classes/component/classes.component';
+import { CycleComponent } from './cycle/component/cycle.component';
+import { EstablishmentComponent } from './establishment/component/establishment.component';
+import { StudentComponent } from './student/component/student.component';
 
 const routes: Routes = [
   {path:"home",redirectTo : "/"},
@@ -16,7 +16,7 @@ const routes: Routes = [
   {path:"establishment",component:EstablishmentComponent},
   {path:"branch",component:BranchComponent},
   {path:"**",redirectTo : "home"},
-  
+
 ];
 
 @NgModule({

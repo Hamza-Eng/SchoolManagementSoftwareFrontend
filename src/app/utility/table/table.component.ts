@@ -2,7 +2,7 @@ import {LiveAnnouncer} from '@angular/cdk/a11y';
 import {AfterViewInit,OnInit, Component, ViewChild} from '@angular/core';
 import {MatSort, Sort} from '@angular/material/sort';
 import {MatTableDataSource} from '@angular/material/table';
-import { EstablishmentService } from 'src/app/services/establishment.service';
+import { EstablishmentService } from 'src/app/establishment/establishment.service';
 
 
 export interface PeriodicElement {
@@ -29,11 +29,11 @@ const ELEMENT_DATA: PeriodicElement[] = [
 @Component({
   selector: 'app-table',
   templateUrl: './table.component.html',
- 
+
   styleUrls: ['./table.component.css']
 })
 export class TableComponent implements AfterViewInit , OnInit{
-  
+
   displayedColumns: string[] = ['position', 'name', 'weight', 'symbol'];
   dataSource = new MatTableDataSource(ELEMENT_DATA);
 

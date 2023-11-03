@@ -19,12 +19,12 @@ import {MatInputModule} from '@angular/material/input';
 import { HttpClientModule } from '@angular/common/http';
 import { MenubarComponent } from './utility/menubar/menubar.component';
 import { CardComponent } from './utility/card/card.component';
-import { CenterComponent } from './component/center/center.component';
+import { CenterComponent } from './center/component/center.component';
 import { TableComponent } from './utility/table/table.component';
-import { EstablishmentComponent } from './component/establishment/establishment.component';
-import { CycleComponent } from './component/cycle/cycle.component';
-import { BranchComponent } from './component/branch/branch.component';
-import { StudentComponent } from './component/student/student.component';
+import { EstablishmentComponent } from './establishment/component/establishment.component';
+import { CycleComponent } from './cycle/component/cycle.component';
+import { BranchComponent } from './branch/component/branch.component';
+import { StudentComponent } from './student/component/student.component';
 
 @NgModule({
   declarations: [
@@ -37,8 +37,8 @@ import { StudentComponent } from './component/student/student.component';
     CycleComponent,
     BranchComponent,
     StudentComponent
-    
-    
+
+
   ],
   imports: [
     HttpClientModule,
