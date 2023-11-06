@@ -26,6 +26,7 @@ import { CycleComponent } from './cycle/component/cycle.component';
 import { BranchComponent } from './branch/component/branch.component';
 import { StudentComponent } from './student/component/student.component';
 import {ClassesModule} from "./classes/classes.module";
+import {FlexModule} from "@angular/flex-layout";
 
 @NgModule({
   declarations: [
@@ -56,6 +57,7 @@ import {ClassesModule} from "./classes/classes.module";
     MatAutocompleteModule,
     MatIconModule,
     MatButtonModule,
+    FlexModule,
 
   ],
   providers: [],
