@@ -29,5 +29,5 @@ export class EstablishmentComponent implements OnInit{
    this.dataSource = new MatTableDataSource(ELEMENT_DATA);
    this.displayedColumns= ['position', 'name', 'weight', 'symbol','hamza']
   }
- 
+
 }

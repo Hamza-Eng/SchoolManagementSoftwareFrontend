@@ -25,6 +25,7 @@ import { EstablishmentComponent } from './establishment/component/establishment.
 import { CycleComponent } from './cycle/component/cycle.component';
 import { BranchComponent } from './branch/component/branch.component';
 import { StudentComponent } from './student/component/student.component';
+import {ClassesModule} from "./classes/classes.module";
 
 @NgModule({
   declarations: [
@@ -54,9 +55,13 @@ import { StudentComponent } from './student/component/student.component';
     BrowserAnimationsModule,
     MatAutocompleteModule,
     MatIconModule,
-    MatButtonModule
+    MatButtonModule,
+
   ],
   providers: [],
+  exports: [
+    TableComponent
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
