@@ -11,3 +11,18 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
   'GRAD' 0,
   'opsz' 24
 }
+.container{
+  padding: 50px;
+  max-width: 1200px;
+  margin: auto;
+}
+.container-sm{
+  padding: 50px;
+  max-width: 800px;
+  margin: auto;
+}
+body{
+  background: #081b29;
+
+
+}
