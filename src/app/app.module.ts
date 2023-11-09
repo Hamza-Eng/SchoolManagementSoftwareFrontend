@@ -51,7 +51,7 @@ import { CenterModule } from './center/center.module';
     MatCardModule,
     MatSortModule,
     MatTableModule,
-    // shared 
+    // shared
     MatIconModule,
     AppRoutingModule,
     BrowserModule,
@@ -66,8 +66,10 @@ import { CenterModule } from './center/center.module';
     EstablishmentModule,
     StudentModule,
     CenterModule,
+    ClassesModule
 
-   
+
+
 
   ],
   providers: [],

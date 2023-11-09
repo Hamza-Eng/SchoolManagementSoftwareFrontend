@@ -1,7 +1,12 @@
 <!--<div *ngFor="let item of classes">-->
 <!--  <p>{{item.id}}</p>-->
 <!--</div>-->
+
 <div class="container">
+  <div>
+    <button mat-raised-button color="primary" (click)="openDialogToAdd('1000ms', '500ms')" >Add new Class</button>
+  </div>
+
 <table mat-table [dataSource]="dataSource" class="mat-elevation-z8" >
 
   <!-- Position Column -->

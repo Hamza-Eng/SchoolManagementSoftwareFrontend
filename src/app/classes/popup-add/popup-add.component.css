@@ -1,0 +1,19 @@
+.form-add {
+ width: 100%;
+}
+.form-container{
+  padding-left: 3rem;
+  padding-right: 3rem;
+
+}
+.form-container h1{
+  font-size: 30px;
+  padding-top: 10px;
+}
+.example-full-width {
+  width: 100%;
+}
+
+td {
+  padding-right: 8px;
+}
