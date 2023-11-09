@@ -1,29 +1,16 @@
 
-
-
 <div class="form-container">
   <h1>Add new Class</h1>
-<form class="form-add">
-  <table class="example-full-width" cellspacing="0"><tr>
-    <td><mat-form-field class="example-full-width">
-      <mat-label>First name</mat-label>
-      <input matInput>
-    </mat-form-field></td>
-    <td><mat-form-field class="example-full-width">
-      <mat-label>Long Last Name That Will Be Truncated</mat-label>
-      <input matInput>
-    </mat-form-field></td>
-  </tr></table>
+<form class="form-add" [formGroup]="classesForm" (ngSubmit)="onSubmit()">
 
-  <p>
     <mat-form-field class="example-full-width">
-      <mat-label>Address</mat-label>
-      <textarea matInput placeholder="Ex. 100 Main St">1600 Amphitheatre Pkwy</textarea>
+      <mat-label>id</mat-label>
+      <input placeholder="id" type="text" formControlName="id" matInput>
     </mat-form-field>
     <mat-form-field class="example-full-width">
-      <mat-label>Address 2</mat-label>
-      <textarea matInput></textarea>
+      <mat-label>Long Last Name That Will Be Truncated</mat-label>
+      <input  placeholder="Name" type="text" formControlName="name" matInput>
     </mat-form-field>
-  </p>
+  <button type="submit" >Submit</button>
 </form>
 </div>

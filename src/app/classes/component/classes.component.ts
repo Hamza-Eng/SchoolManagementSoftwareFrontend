@@ -26,9 +26,6 @@ export class ClassesComponent implements OnInit{
         data
       );
 
-
-
-
     })
 
   }
@@ -38,6 +35,12 @@ export class ClassesComponent implements OnInit{
       enterAnimationDuration:enterAnimation,
       exitAnimationDuration:exiteAnimation,
       width:"50%"
+    })
+  }
+
+  addclass(newclass : Classes){
+     this.classesService.addClasses(newclass).subscribe(()=>{
+      console.log("class adedd !")
     })
   }
 }

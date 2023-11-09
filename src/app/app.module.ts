@@ -66,7 +66,8 @@ import { CenterModule } from './center/center.module';
     EstablishmentModule,
     StudentModule,
     CenterModule,
-    ClassesModule
+    ClassesModule,
+
 
 
 

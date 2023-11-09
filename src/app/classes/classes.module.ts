@@ -8,6 +8,7 @@ import { PopupAddComponent } from './popup-add/popup-add.component';
 import {MatButtonModule} from "@angular/material/button";
 import { MatDialogModule} from "@angular/material/dialog";
 import {MatInputModule} from "@angular/material/input";
+import {FormsModule, ReactiveFormsModule} from "@angular/forms";
 
 
 
@@ -23,7 +24,9 @@ import {MatInputModule} from "@angular/material/input";
     MatTableModule,
     MatButtonModule,
     MatDialogModule,
-    MatInputModule
+    MatInputModule,
+    ReactiveFormsModule,
+    FormsModule
   ]
 })
 export class ClassesModule { }
