@@ -26,7 +26,10 @@ import { CycleComponent } from './cycle/component/cycle.component';
 import { BranchComponent } from './branch/component/branch.component';
 import { StudentComponent } from './student/component/student.component';
 import {ClassesModule} from "./classes/classes.module";
-import {FlexModule} from "@angular/flex-layout";
+import { EstablishmentModule } from './establishment/establishment.module';
+import { StudentModule } from './student/student.module';
+import { CenterModule } from './center/center.module';
+
 
 @NgModule({
   declarations: [
@@ -48,16 +51,23 @@ import {FlexModule} from "@angular/flex-layout";
     MatCardModule,
     MatSortModule,
     MatTableModule,
-    MatListModule,
-    MatSidenavModule,
-    BrowserModule,
+    // shared 
+    MatIconModule,
     AppRoutingModule,
-    MatToolbarModule,
+    BrowserModule,
+    MatListModule,
     BrowserAnimationsModule,
     MatAutocompleteModule,
-    MatIconModule,
     MatButtonModule,
-    FlexModule,
+
+    MatSidenavModule,
+    MatToolbarModule,
+    // component mouduls
+    EstablishmentModule,
+    StudentModule,
+    CenterModule,
+
+   
 
   ],
   providers: [],
