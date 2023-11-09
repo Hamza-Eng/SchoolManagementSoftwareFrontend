@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { PeriodicElement } from 'src/app/utility/table/table.component';
 import {MatTableDataSource} from '@angular/material/table';
+import { MatDialog } from '@angular/material/dialog';
+import { EstablishmentDialogComponent } from '../establishment-dialog/establishment-dialog.component';
 
 const ELEMENT_DATA: any[] = [
   {position: 1, name: 'Hydrogen', weight: 1.0079, symbol: 'H',hamza:'hamza'},
@@ -20,7 +22,7 @@ const ELEMENT_DATA: any[] = [
   styleUrls: ['./establishment.component.css']
 })
 export class EstablishmentComponent implements OnInit{
-  constructor(){
+  constructor(public dialog: MatDialog){
 
   }
   dataSource :any;
@@ -30,4 +32,13 @@ export class EstablishmentComponent implements OnInit{
    this.displayedColumns= ['position', 'name', 'weight', 'symbol','hamza']
   }
 
+  openDialog() {
+    const dialogRef = this.dialog.open(EstablishmentDialogComponent);
+
+    dialogRef.afterClosed().subscribe(result => {
+      console.log(`Dialog result: ${result}`);
+    });
+  }
 }
+
+
