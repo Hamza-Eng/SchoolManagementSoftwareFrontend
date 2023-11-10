@@ -7,39 +7,28 @@ import { servicegeneratore } from '../genertore/generatore';
   providedIn: 'root'
 })
 export class EstablishmentService implements servicegeneratore{
+  
+  url: string=environment.url+"etablissement/";
 
   constructor(private http: HttpClient) {
   }
-  url: string=environment.url+"etablissement/";
-
-  getById(id:number) {
-    this.http.get(this.url+"findById/"+id).subscribe(data => {
-      console.log(data);
-      
-    });
-    }
+  getById(id: number) {
+     
+  }
   findAll() {
-    this.http.get(this.url+"findAll").subscribe(data => {
-      console.log(data);
-      
-    });
+   
   }
   saveOrUpdate(data: any) {
-    this.http.post(this.url+"saveorupdate", data).subscribe(response => {
-      console.log(response);
-    });
-  }
-  deleteById(id : number) {
-    this.http.delete(this.url+"delete/"+id).subscribe(response => {
-     console.log(response);
      
-    });
+  }
+  deleteById(id: number) {
+     
   }
   deleteAll() {
-    this.http.delete(this.url+"deleteAll").subscribe(response => {
-      console.log(response);
-      
-     });
+     
   }
+  
+
+ 
 }
 

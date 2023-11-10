@@ -4,6 +4,7 @@ import { EstablishmentDialogModulModule } from './establishment-dialog-modul/est
 import { MatButtonModule } from '@angular/material/button';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatSelectModule } from '@angular/material/select';
+import { ReactiveFormsModule } from '@angular/forms';
 
 
 
@@ -12,6 +13,7 @@ import { MatSelectModule } from '@angular/material/select';
   imports: [
     CommonModule,
     EstablishmentDialogModulModule,
+    
    
     
   ]

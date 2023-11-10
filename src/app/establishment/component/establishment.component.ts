@@ -33,11 +33,7 @@ export class EstablishmentComponent implements OnInit{
   }
 
   openDialog() {
-    const dialogRef = this.dialog.open(EstablishmentDialogComponent);
-
-    dialogRef.afterClosed().subscribe(result => {
-      console.log(`Dialog result: ${result}`);
-    });
+    const dialogRef = this.dialog.open(EstablishmentDialogComponent);    
   }
 }
 

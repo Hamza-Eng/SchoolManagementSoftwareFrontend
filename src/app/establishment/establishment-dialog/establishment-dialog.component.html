@@ -1,34 +1,37 @@
-<form action="" method="post">
+<form  (ngSubmit)="onSubmit()" >
 <h2 mat-dialog-title>Add new establishment</h2>
-<mat-dialog-content class="mat-typography">
+<mat-dialog-content  class="mat-typography">
   <mat-form-field>
     <mat-label>Name</mat-label>
-    <input matInput>
+    <input matInput name="name"    [(ngModel)]="formData.name" required>
+  </mat-form-field>
+  <br>
+  <mat-form-field>
+    <mat-label>ICE</mat-label>
+    <input matInput name="ice" [(ngModel)]="formData.ice" required>
   </mat-form-field>
   <br>
   <mat-form-field>
     <mat-label>Email</mat-label>
-   <input type="email" matInput>
+   <input type="email" matInput name="email" [(ngModel)]="formData.email" required>
   </mat-form-field>
   <br>
-  <mat-form-field>
+  <!-- <mat-form-field>
     <mat-label>Select</mat-label>
     <mat-select>
       <mat-option value="one">First option</mat-option>
       <mat-option value="two">Second option</mat-option>
     </mat-select>
-  </mat-form-field>
+  </mat-form-field> -->
   <br>
-  <mat-form-field>
+  <!-- <mat-form-field>
     <mat-label>Textarea</mat-label>
     <textarea matInput></textarea>
-  </mat-form-field>
+  </mat-form-field> -->
   
 </mat-dialog-content>
 <mat-dialog-actions align="end">
-  <button mat-button mat-dialog-close type="submit">Cancel</button>
-  <button mat-button 
-    
-  cdkFocusInitial>Add</button>
+  <button mat-button mat-dialog-close   >Cancel</button>
+  <button mat-button    type="submit" cdkFocusInitial>Add</button>
 </mat-dialog-actions>
 </form>
