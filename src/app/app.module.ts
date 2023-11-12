@@ -29,6 +29,7 @@ import {ClassesModule} from "./classes/classes.module";
 import { EstablishmentModule } from './establishment/establishment.module';
 import { StudentModule } from './student/student.module';
 import { CenterModule } from './center/center.module';
+import { AddSuceesfullyComponent } from './_shared/components/add-suceesfully/add-suceesfully.component';
 
 
 @NgModule({
@@ -41,7 +42,8 @@ import { CenterModule } from './center/center.module';
     EstablishmentComponent,
     CycleComponent,
     BranchComponent,
-    StudentComponent
+    StudentComponent,
+    AddSuceesfullyComponent
 
 
   ],
@@ -67,6 +69,7 @@ import { CenterModule } from './center/center.module';
     StudentModule,
     CenterModule,
     ClassesModule,
+
 
 
 

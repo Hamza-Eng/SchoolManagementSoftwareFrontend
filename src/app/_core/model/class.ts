@@ -1,6 +1,11 @@
+import {Niveau} from "./niveau";
+
 export class Classes {
   id : number = 0;
-  name : string = "";
-  numero : number= 0;
- // anneUniver :Date;
+  nom : string = "";
+
+  anneUniver: Date= new Date();
+  niveau: Niveau = new Niveau();
+  createdAt :Date  =new Date();
+  updatedAt: Date =new Date();
 }

@@ -7,13 +7,13 @@ import {Classes} from "../_core/model/class";
   providedIn: 'root'
 })
 export class ClassesService {
-  url:string= 'http://localhost:3002/';
+  url:string= 'http://localhost:8060/class';
 
   classes : Classes[]= [];
   constructor(private http: HttpClient) { }
 
   getClasses():Observable<Classes[]>{
-    return  this.http.get<Classes[]>(this.url+"classes");
+    return  this.http.get<Classes[]>(this.url+"/findAll");
   }
   addClasses(newclass:Classes){
     return this.http.post<Classes>(this.url+"addclass",newclass);
