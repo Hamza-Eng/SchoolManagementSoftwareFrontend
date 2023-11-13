@@ -5,7 +5,7 @@
     <mat-dialog-content  class="mat-typography">
       <mat-form-field>
         <mat-label>Name</mat-label>
-        <input matInput name="name"  #nameInput="ngModel"  [(ngModel)]="formData.name" pattern="[a-zA-Z]+" required>
+        <input matInput name="name"  #nameInput="ngModel"  [(ngModel)]="formData.name" pattern="[a-zA-Z ]+" required>
         <mat-error *ngIf="nameInput.hasError('required')">Name is required</mat-error>
         <mat-error *ngIf="nameInput.hasError('pattern')">Invalid characters in Name (only letters allowed)</mat-error>
       

@@ -1,11 +1,7 @@
 :host {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-direction: column;
-    align-items: flex-start;
-   
-   
-  }
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
 
- 
+
+}

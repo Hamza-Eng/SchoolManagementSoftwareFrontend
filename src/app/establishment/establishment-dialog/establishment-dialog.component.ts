@@ -28,10 +28,10 @@ export class EstablishmentDialogComponent implements OnInit{
     });
   }
   onSubmit(){
-    if (this.establishmentForm.valid) {
+   
       this.dialog.close(this.formData);
       console.log('Form submitted:', this.formData);
-    }
+    
    
    
     
