@@ -33,7 +33,18 @@ export class EstablishmentComponent implements OnInit{
   }
 
   openDialog() {
-    const dialogRef = this.dialog.open(EstablishmentDialogComponent);    
+    const dialogRef = this.dialog.open(EstablishmentDialogComponent);   
+    dialogRef.afterClosed().subscribe((result)=>{
+      if (result) {
+        console.log('Dialog closed with result:', result);
+
+        // Handle the result data from the dialog, e.g., update the dataSource
+        // this.dataSource.push(result); // Update dataSource as per your requirements
+      } else {
+        console.log('Dialog closed without result');
+      }
+
+    }) ;
   }
 }
 

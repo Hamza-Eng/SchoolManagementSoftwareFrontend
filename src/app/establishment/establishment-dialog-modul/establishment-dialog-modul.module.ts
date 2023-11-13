@@ -22,7 +22,8 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
      MatInputModule, 
      MatSelectModule,
      FormsModule,
-    
+     ReactiveFormsModule,
+
 
   ]
 })

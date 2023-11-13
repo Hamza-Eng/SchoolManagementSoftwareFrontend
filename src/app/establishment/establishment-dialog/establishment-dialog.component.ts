@@ -20,7 +20,7 @@ export class EstablishmentDialogComponent implements OnInit{
   }
   private initForm(): void {
     this.establishmentForm = this.formBuilder.group({
-      name: ['', Validators.required,Validators.maxLength(50),Validators.pattern("[a-zA-Z ]*")] ,
+      name: ['', Validators.required,Validators.maxLength(50)] ,
       ice: ['', Validators.required],
       email: ['', [Validators.required, Validators.email]],
       selectedOption: ['', Validators.required],
@@ -28,9 +28,12 @@ export class EstablishmentDialogComponent implements OnInit{
     });
   }
   onSubmit(){
-    
-    this.dialog.close();
-    console.log('Form submitted:', this.formData);
+    if (this.establishmentForm.valid) {
+      this.dialog.close(this.formData);
+      console.log('Form submitted:', this.formData);
+    }
+   
+   
     
   }
 }
