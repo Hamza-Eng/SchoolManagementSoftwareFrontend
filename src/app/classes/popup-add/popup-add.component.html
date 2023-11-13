@@ -6,11 +6,16 @@
     <mat-form-field class="example-full-width">
       <mat-label>id</mat-label>
       <input placeholder="id" type="text" formControlName="id" matInput>
+      <small *ngIf="classesForm.get('id')?.invalid && classesForm.get('id')?.touched">id required</small>
     </mat-form-field>
     <mat-form-field class="example-full-width">
-      <mat-label>Long Last Name That Will Be Truncated</mat-label>
+      <mat-label>Your Name</mat-label>
       <input  placeholder="Name" type="text" formControlName="name" matInput>
     </mat-form-field>
+  <mat-form-field class="example-full-width">
+    <mat-label>Your numero</mat-label>
+    <input  placeholder="Name" type="text" formControlName="numero" matInput>
+  </mat-form-field>
   <button type="submit" >Submit</button>
 </form>
 </div>

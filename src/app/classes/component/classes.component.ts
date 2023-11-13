@@ -21,7 +21,8 @@ export class ClassesComponent implements OnInit{
   ngOnInit(): void {
     this.classesService.getClasses().subscribe(data=>{
       this.classes = data;
-      this.displayedColumns= ['id', 'name', 'numero'];
+      console.log(data);
+      this.displayedColumns= ['id', 'nom', 'schoolYear', 'Level', 'createdAt', 'updatedAt'];
       this.dataSource = new MatTableDataSource(
         data
       );
