@@ -1,41 +1,44 @@
-<form   (ngSubmit)="onSubmit()" >
 <h2 mat-dialog-title>Add new establishment</h2>
-<mat-dialog-content  class="mat-typography">
-  <mat-form-field>
-    <mat-label>Name</mat-label>
-    <input matInput name="name"  #nameInput="ngModel"  [(ngModel)]="formData.name" pattern="[a-zA-Z]+" required>
-    <mat-error *ngIf="nameInput.hasError('required')">Name is required</mat-error>
-    <mat-error *ngIf="nameInput.hasError('pattern')">Invalid characters in Name (only letters allowed)</mat-error>
-  
-  </mat-form-field>
-  <br>
-  <mat-form-field>
-    <mat-label>ICE</mat-label>
-    <input matInput name="ice" [(ngModel)]="formData.ice" required>
-  </mat-form-field>
-  <br>
-  <mat-form-field>
-    <mat-label>Email</mat-label>
-   <input type="email" matInput name="email" [(ngModel)]="formData.email" required>
-  </mat-form-field>
-  <br>
-
-  <!-- <mat-form-field>
-    <mat-label>Select</mat-label>
-    <mat-select>
-      <mat-option value="one">First option</mat-option>
-      <mat-option value="two">Second option</mat-option>
-    </mat-select>
-  </mat-form-field> -->
-  <br>
-  <!-- <mat-form-field>
-    <mat-label>Textarea</mat-label>
-    <textarea matInput></textarea>
-  </mat-form-field> -->
-  
-</mat-dialog-content>
-<mat-dialog-actions align="end">
-  <button mat-button mat-dialog-close   >Cancel</button>
-  <button mat-button    type="submit" cdkFocusInitial>Add</button>
-</mat-dialog-actions>
-</form>
+<div class="container">
+  <form   (ngSubmit)="onSubmit()" >
+   
+    <mat-dialog-content  class="mat-typography">
+      <mat-form-field>
+        <mat-label>Name</mat-label>
+        <input matInput name="name"  #nameInput="ngModel"  [(ngModel)]="formData.name" pattern="[a-zA-Z]+" required>
+        <mat-error *ngIf="nameInput.hasError('required')">Name is required</mat-error>
+        <mat-error *ngIf="nameInput.hasError('pattern')">Invalid characters in Name (only letters allowed)</mat-error>
+      
+      </mat-form-field>
+      <br>
+      <mat-form-field>
+        <mat-label>ICE</mat-label>
+        <input matInput name="ice" [(ngModel)]="formData.ice" required>
+      </mat-form-field>
+      <br>
+      <mat-form-field>
+        <mat-label>Email</mat-label>
+       <input type="email" matInput name="email" [(ngModel)]="formData.email" required>
+      </mat-form-field>
+      <br>
+    
+      <!-- <mat-form-field>
+        <mat-label>Select</mat-label>
+        <mat-select>
+          <mat-option value="one">First option</mat-option>
+          <mat-option value="two">Second option</mat-option>
+        </mat-select>
+      </mat-form-field> -->
+      <br>
+      <!-- <mat-form-field>
+        <mat-label>Textarea</mat-label>
+        <textarea matInput></textarea>
+      </mat-form-field> -->
+      
+    </mat-dialog-content>
+    <mat-dialog-actions align="end">
+      <button mat-button mat-dialog-close   >Cancel</button>
+      <button mat-button    type="submit" cdkFocusInitial>Add</button>
+    </mat-dialog-actions>
+    </form>
+</div>
