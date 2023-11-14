@@ -2,6 +2,7 @@ import { Dialog } from '@angular/cdk/dialog';
 import { Component,OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { MatDialogRef } from '@angular/material/dialog';
+import { MatSnackBar } from '@angular/material/snack-bar';
 
 @Component({
   selector: 'app-establishment-dialog',
@@ -12,25 +13,20 @@ import { MatDialogRef } from '@angular/material/dialog';
 export class EstablishmentDialogComponent implements OnInit{
   formData: any = {}; 
   establishmentForm!: FormGroup;
-  constructor(private formBuilder: FormBuilder,private dialog:MatDialogRef<EstablishmentDialogComponent>){
+  constructor(private _snackBar: MatSnackBar,private formBuilder: FormBuilder,private dialog:MatDialogRef<EstablishmentDialogComponent>){
 
   }
   ngOnInit(): void {
-    this.initForm();
+    // this.initForm();
   }
-  private initForm(): void {
-    this.establishmentForm = this.formBuilder.group({
-      name: ['', Validators.required,Validators.maxLength(50)] ,
-      ice: ['', Validators.required],
-      email: ['', [Validators.required, Validators.email]],
-      selectedOption: ['', Validators.required],
-      // Add more form controls as needed
-    });
+  openSnackBar(message: string, action: string) {
+    this._snackBar.open(message,action);
   }
   onSubmit(){
    
       this.dialog.close(this.formData);
       console.log('Form submitted:', this.formData);
+      this.openSnackBar("establishment added ","hide");
     
    
    

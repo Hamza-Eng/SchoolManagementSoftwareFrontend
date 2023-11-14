@@ -1,6 +1,6 @@
 export class establishment{
     
-	    societe !:String;
+	    name !:String;
 
 	    adresse !:String;
 
