@@ -7,7 +7,8 @@
     <button mat-raised-button color="primary" (click)="openDialogToAdd('1000ms', '500ms')" >Add new Class</button>
   </div>
 <div *ngFor="let item of classes">
-  <h2 >{{item.id}}</h2>
+
+  <h2 >{{item.etudiants.nom}}</h2>
 </div>
 <table mat-table [dataSource]="dataSource" class="mat-elevation-z8" >
 
@@ -28,14 +29,14 @@
     <th mat-header-cell *matHeaderCellDef> School Year </th>
     <td mat-cell *matCellDef="let element"> {{element.anneeUniver}} </td>
   </ng-container>
-  <ng-container matColumnDef="Level">
-    <th mat-header-cell *matHeaderCellDef> Level </th>
-    <td mat-cell *matCellDef="let element"> {{element.niveaux.id}} </td>
-  </ng-container>
-  <ng-container matColumnDef="etudiant">
-    <th mat-header-cell *matHeaderCellDef> Etudiant </th>
-    <td mat-cell *matCellDef="let element"> {{element.etudiants.nom}} </td>
-  </ng-container>
+<!--  <ng-container matColumnDef="Level">-->
+<!--    <th mat-header-cell *matHeaderCellDef> Level </th>-->
+<!--    <td mat-cell *matCellDef="let element"> {{element.niveaux.id}} </td>-->
+<!--  </ng-container>-->
+<!--  <ng-container matColumnDef="etudiant">-->
+<!--    <th mat-header-cell *matHeaderCellDef> Etudiant </th>-->
+<!--    <td mat-cell *matCellDef="let element"> {{element.etudiants.nom}} </td>-->
+<!--  </ng-container>-->
   <ng-container matColumnDef="createdAt">
     <th mat-header-cell *matHeaderCellDef> Created At </th>
     <td mat-cell *matCellDef="let element"> {{element.createdAt}} </td>
