@@ -22,7 +22,7 @@ export class ClassesComponent implements OnInit{
     this.classesService.getClasses().subscribe(data=>{
       this.classes = data;
       console.log(data);
-      this.displayedColumns= ['id', 'nom', 'schoolYear', 'Level', 'createdAt', 'updatedAt'];
+      this.displayedColumns= ['id', 'nom', 'schoolYear', 'Level','etudiant', 'createdAt', 'updatedAt'];
       this.dataSource = new MatTableDataSource(
         data
       );
