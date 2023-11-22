@@ -3,6 +3,7 @@ import { PeriodicElement } from 'src/app/utility/table/table.component';
 import {MatTableDataSource} from '@angular/material/table';
 import { MatDialog } from '@angular/material/dialog';
 import { EstablishmentDialogComponent } from '../establishment-dialog/establishment-dialog.component';
+import { EstablishmentService } from '../establishment.service';
 
 const ELEMENT_DATA: any[] = [
   {position: 1, name: 'Hydrogen', weight: 1.0079, symbol: 'H',hamza:'hamza'},
@@ -22,7 +23,7 @@ const ELEMENT_DATA: any[] = [
   styleUrls: ['./establishment.component.css']
 })
 export class EstablishmentComponent implements OnInit{
-  constructor(public dialog: MatDialog){
+  constructor(public dialog: MatDialog,private service:EstablishmentService){
 
   }
   dataSource :any;
@@ -36,8 +37,9 @@ export class EstablishmentComponent implements OnInit{
     const dialogRef = this.dialog.open(EstablishmentDialogComponent);   
     dialogRef.afterClosed().subscribe((result)=>{
       if (result) {
+        
         console.log('Dialog closed with result:', result);
-
+this.service.saveOrUpdate(result);
         // Handle the result data from the dialog, e.g., update the dataSource
         // this.dataSource.push(result); // Update dataSource as per your requirements
       } else {
