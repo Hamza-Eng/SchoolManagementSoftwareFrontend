@@ -1,5 +1,6 @@
 export class establishment{
-    
+    id !:number;
+     logo !:String;
 	    name !:String;
 
 	    adresse !:String;

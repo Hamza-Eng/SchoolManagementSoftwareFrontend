@@ -7,16 +7,15 @@ import { MatSelectModule } from '@angular/material/select';
 import { ReactiveFormsModule } from '@angular/forms';
 import {MatSnackBarModule} from '@angular/material/snack-bar';
 
-
-
 @NgModule({
   declarations: [],
   imports: [
     CommonModule,
     EstablishmentDialogModulModule,
-    MatSnackBarModule
-   
-    
+    MatSnackBarModule,
+
+
+
   ]
 })
 export class EstablishmentModule { }
