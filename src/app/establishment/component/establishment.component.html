@@ -2,5 +2,80 @@
 <div style="text-align: center;width: 100%">
     <button mat-raised-button style="margin-top: 5%;" color="primary" (click)="openDialog()"> <mat-icon>add</mat-icon>add new establishment</button>
 </div>
-<app-table  [dataSource]="dataSource" [displayedColumns]="displayedColumns"></app-table>
+  <mat-form-field class="searchInput">
+    <mat-label>Search</mat-label>
+    <input matInput (keyup)="applyFilter($event)" placeholder="Ex. Hamza" #input>
+  </mat-form-field>
+  <table mat-table [dataSource]="dataSource" matSort (matSortChange)="announceSortChange($event)"
+         class="mat-elevation-z8">
+
+
+
+
+    <!-- Id Column-->
+    <ng-container matColumnDef="id">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header sortActionDescription="Sort by id">
+       Id
+      </th>
+      <td mat-cell *matCellDef="let element"> {{element.id}} </td>
+    </ng-container>
+
+    <!-- Name Column -->
+    <ng-container matColumnDef="name">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header sortActionDescription="Sort by name">
+        name
+      </th>
+      <td mat-cell *matCellDef="let element"> {{element.name}} </td>
+    </ng-container>
+
+    <!-- Symbol Column
+    <ng-container matColumnDef="symbol">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header sortActionDescription="Sort by symbol">
+        Symbol
+      </th>
+      <td mat-cell *matCellDef="let element"> {{element.symbol}} </td>
+    </ng-container>-->
+    <!-- Symbol Column -->
+    <ng-container matColumnDef="email">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header sortActionDescription="Sort by email">
+        Email
+      </th>
+      <td mat-cell *matCellDef="let element"> {{element.email}} </td>
+    </ng-container> 
+   
+
+    <ng-container matColumnDef="ice">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header sortActionDescription="Sort by ice">
+       ICE
+      </th>
+      <td mat-cell *matCellDef="let element"> {{element.ice}} </td>
+    </ng-container> 
+
+    <ng-container matColumnDef="tel">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header sortActionDescription="Sort by tel">
+        Telephone
+      </th>
+      <td mat-cell *matCellDef="let element"> {{element.tel}} </td>
+    </ng-container> 
+
+    <ng-container matColumnDef="adresse">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header sortActionDescription="Sort by adresse">
+        Adresse
+      </th>
+      <td mat-cell *matCellDef="let element"> {{element.adresse}} </td>
+    </ng-container> 
+    <br>
+
+    <!-- "id" ,"logo"  ,"name" ,"ice" ,"email" ,"tel" -->
+    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+    <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+  </table>
+
+
+<!--<div style="color: white" *ngFor="let element of etblishment">-->
+<!--  <h1>{{element.id}}</h1>-->
+<!--  <h1>{{element.name}}</h1>-->
+<!--  <h1>{{element.logo}}</h1>-->
+<!--</div>-->
+  <!--<app-table  [dataSource]="dataSource" [displayedColumns]="displayedColumns"></app-table>-->
 </div>

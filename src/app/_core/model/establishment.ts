@@ -1,36 +1,47 @@
-export class establishment{
-    
-	    name !:String;
+import { Centres } from "./Centres";
 
-	    adresse !:String;
+export class establishment {
+	
+	id !: number;
 
-	    ville !:String;
+	logo !: String;
 
-	    email !:String;
+	name !: String;
 
-	    descc !:String;
+	adresse !: String;
 
-	    web !:String;
+	ville !: String;
 
-	    ice !:String;
+	email !: String;
 
-	    rc !:String;
+	tel !: String;
 
-	    patente !:String;
 
-	    cnss !:String;
+	descc !: String;
 
-	    ifs !:String;
+	web !: String;
 
-	    tel !:String;
+	ice !: String;
 
-	    portable !:String;
+	rc !: String;
 
-	    banque !:String;
+	patente !: String;
 
-	    agence !:String;
+	cnss !: String;
 
-	    rib !:String;
+	ifs !: String;
 
-	    image !:String;
+	
+
+	portable !: String;
+
+	banque !: String;
+
+	agence !: String;
+
+	rib !: String;
+
+	image !: String;
+
+	centers !: Centres[];
 }
