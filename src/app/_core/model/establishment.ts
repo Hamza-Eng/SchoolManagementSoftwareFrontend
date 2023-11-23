@@ -1,37 +1,40 @@
-export class establishment{
-    id !:number;
-     logo !:String;
-	    name !:String;
+export class establishment {
+	
+	id !: number;
 
-	    adresse !:String;
+	logo !: String;
 
-	    ville !:String;
+	name !: String;
 
-	    email !:String;
+	adresse !: String;
 
-	    descc !:String;
+	ville !: String;
 
-	    web !:String;
+	email !: String;
 
-	    ice !:String;
+	descc !: String;
 
-	    rc !:String;
+	web !: String;
 
-	    patente !:String;
+	ice !: String;
 
-	    cnss !:String;
+	rc !: String;
 
-	    ifs !:String;
+	patente !: String;
 
-	    tel !:String;
+	cnss !: String;
 
-	    portable !:String;
+	ifs !: String;
 
-	    banque !:String;
+	tel !: String;
 
-	    agence !:String;
+	portable !: String;
 
-	    rib !:String;
+	banque !: String;
 
-	    image !:String;
+	agence !: String;
+
+	rib !: String;
+
+	image !: String;
 }
