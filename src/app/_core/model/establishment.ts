@@ -1,3 +1,5 @@
+import { Centres } from "./Centres";
+
 export class establishment {
 	
 	id !: number;
@@ -11,6 +13,9 @@ export class establishment {
 	ville !: String;
 
 	email !: String;
+
+	tel !: String;
+
 
 	descc !: String;
 
@@ -26,7 +31,7 @@ export class establishment {
 
 	ifs !: String;
 
-	tel !: String;
+	
 
 	portable !: String;
 
@@ -37,4 +42,6 @@ export class establishment {
 	rib !: String;
 
 	image !: String;
+
+	centers !: Centres[];
 }

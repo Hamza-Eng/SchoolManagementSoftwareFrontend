@@ -12,14 +12,46 @@
       </mat-form-field>
       <br>
       <mat-form-field>
-        <mat-label>ICE</mat-label>
-        <input matInput name="ice" [(ngModel)]="formData.ice" required>
-      </mat-form-field>
-      <br>
-      <mat-form-field>
         <mat-label>Email</mat-label>
        <input type="email" matInput name="email" [(ngModel)]="formData.email" required>
       </mat-form-field>
+      <br>
+      <mat-form-field>
+        <mat-label>ICE</mat-label>
+       <input type="text" matInput name="ice" [(ngModel)]="formData.ice" required>
+      </mat-form-field>
+      <br>
+      <mat-form-field>
+        <mat-label>Adresse</mat-label>
+       <input type="text" matInput name="adresse" [(ngModel)]="formData.adresse" required>
+      </mat-form-field>
+      <br>
+      <mat-form-field>
+        <mat-label>ٍVille</mat-label>
+       <input type="text" matInput name="ville" [(ngModel)]="formData.ville" required>
+      </mat-form-field>
+      <br>
+      <mat-form-field>
+        <mat-label>Telephone</mat-label>
+       <input type="tel" matInput name="tel" [(ngModel)]="formData.tel" required>
+      </mat-form-field>
+      <br>
+      <mat-form-field>
+        <mat-label>RIB</mat-label>
+       <input type="text" matInput name="rib" [(ngModel)]="formData.rib" required>
+      </mat-form-field>
+      <br>
+      <mat-form-field>
+        <mat-label>CNSS</mat-label>
+       <input type="text" matInput name="cnss" [(ngModel)]="formData.cnss" required>
+      </mat-form-field>
+      <br>
+      <mat-form-field>
+        <mat-label>Telephone</mat-label>
+       <input type="tel" matInput name="tel" [(ngModel)]="formData.tel" required>
+      </mat-form-field>
+      <br>
+     
       <br>
     
       <!-- <mat-form-field>
@@ -38,7 +70,7 @@
     </mat-dialog-content>
     <mat-dialog-actions align="end">
       <button mat-button mat-dialog-close   >Cancel</button>
-      <button mat-button    type="submit" cdkFocusInitial>Add</button>
+      <button mat-button    type="submit" cdkFocusInitial >Add</button>
     </mat-dialog-actions>
     </form>
 </div>

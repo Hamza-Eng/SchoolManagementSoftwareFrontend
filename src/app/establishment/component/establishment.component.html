@@ -4,7 +4,7 @@
 </div>
   <mat-form-field class="searchInput">
     <mat-label>Search</mat-label>
-    <input matInput (keyup)="applyFilter($event)" placeholder="Ex. Mia" #input>
+    <input matInput (keyup)="applyFilter($event)" placeholder="Ex. Hamza" #input>
   </mat-form-field>
   <table mat-table [dataSource]="dataSource" matSort (matSortChange)="announceSortChange($event)"
          class="mat-elevation-z8">
@@ -40,7 +40,7 @@
       <th mat-header-cell *matHeaderCellDef mat-sort-header sortActionDescription="Sort by email">
         Email
       </th>
-      <td mat-cell *matCellDef="let element"> {{element.Email}} </td>
+      <td mat-cell *matCellDef="let element"> {{element.email}} </td>
     </ng-container> 
    
 
@@ -64,6 +64,8 @@
       </th>
       <td mat-cell *matCellDef="let element"> {{element.adresse}} </td>
     </ng-container> 
+    <br>
+
     <!-- "id" ,"logo"  ,"name" ,"ice" ,"email" ,"tel" -->
     <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
     <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
