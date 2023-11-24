@@ -30,6 +30,7 @@ import { EstablishmentModule } from './establishment/establishment.module';
 import { StudentModule } from './student/student.module';
 import { CenterModule } from './center/center.module';
 import { AddSuceesfullyComponent } from './_shared/components/add-suceesfully/add-suceesfully.component';
+import { MatDialogModule } from '@angular/material/dialog';
 
 
 @NgModule({
@@ -48,6 +49,7 @@ import { AddSuceesfullyComponent } from './_shared/components/add-suceesfully/ad
 
   ],
   imports: [
+    MatDialogModule,
     HttpClientModule,
     MatInputModule,
     MatCardModule,
@@ -61,6 +63,8 @@ import { AddSuceesfullyComponent } from './_shared/components/add-suceesfully/ad
     BrowserAnimationsModule,
     MatAutocompleteModule,
     MatButtonModule,
+  
+
 
     MatSidenavModule,
     MatToolbarModule,

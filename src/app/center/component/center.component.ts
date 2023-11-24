@@ -1,6 +1,10 @@
 import { Component,OnInit } from '@angular/core';
+import { MatDialog } from '@angular/material/dialog';
 import { MatTableDataSource } from '@angular/material/table';
 import { PeriodicElement } from 'src/app/utility/table/table.component';
+import { Centres } from 'src/app/_core/model/Centres';
+import { CenterDialogComponent } from '../center-dialog/center-dialog.component';
+import { CenterService } from '../center.service';
 const ELEMENT_DATA: PeriodicElement[] = [
   {position: 1, name: 'Hydrogen', weight: 1.0079, symbol: 'H'},
   {position: 2, name: 'Helium', weight: 4.0026, symbol: 'He'},
@@ -19,13 +23,28 @@ const ELEMENT_DATA: PeriodicElement[] = [
   styleUrls: ['./center.component.css']
 })
 export class CenterComponent implements OnInit{
-  constructor(){
+  constructor(public dialog: MatDialog,private service:CenterService){
 
   }
   dataSource :any;
   displayedColumns: any;
+  centers:Centres[]=[];
   ngOnInit(): void {
-   this.dataSource = new MatTableDataSource(ELEMENT_DATA);
-   this.displayedColumns= ['position', 'name', 'weight', 'symbol']
+    this.service.findAll().subscribe(data=>{
+      this.centers=data;
+      
+      
+    })
+    this.displayedColumns= ['position', 'name', 'weight', 'symbol']
+    this.dataSource = new MatTableDataSource(ELEMENT_DATA);
+  }
+
+  openDialog() {
+    const dialogRef = this.dialog.open(CenterDialogComponent);
+
+    dialogRef.afterClosed().subscribe(result => {
+      this.service.saveOrUpdate(result);
+    });
   }
 }
+
