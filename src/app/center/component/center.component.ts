@@ -6,6 +6,7 @@ import { MatSort, Sort } from '@angular/material/sort';
 import { MatTableDataSource } from '@angular/material/table';
 import { PeriodicElement } from 'src/app/utility/table/table.component';
 import { Centres } from 'src/app/_core/model/Centres';
+import { DialogComponent } from 'src/app/_shared/components/dialog/dialog/dialog.component';
 import { CenterDialogComponent } from '../center-dialog/center-dialog.component';
 import { CenterService } from '../center.service';
 const ELEMENT_DATA: PeriodicElement[] = [
@@ -38,8 +39,22 @@ export class CenterComponent implements OnInit{
     // "id" ,"nomcentre" ,"adresse" ,"email" ,"tel" ,"content" ,"etablissementId" ,"cycles" ,
   }
 
+delete(){
+ 
+    const dialogRef = this.dialog.open(DialogComponent);
 
+    dialogRef.afterClosed().subscribe(result => {
+      console.log(`Dialog result: ${result}`);
+    });
+  
+}
+update(center:Centres){
+  const dialogRef = this.dialog.open(CenterDialogComponent);
 
+    dialogRef.afterClosed().subscribe(result => {
+      console.log(`Dialog result: ${result}`);
+    });
+}
   fetchdata(){
     this.service.findAll().subscribe((data)=>{
       this.centers=data;

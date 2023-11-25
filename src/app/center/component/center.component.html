@@ -63,14 +63,14 @@
       <th mat-header-cell *matHeaderCellDef mat-sort-header   >
         Update
       </th>
-      <td mat-cell *matCellDef="let element">  <button mat-raised-button color="primary">Update</button> </td>
+      <td mat-cell *matCellDef="let element">  <button mat-raised-button color="primary" (click)="update(element)" >Update</button> </td>
     </ng-container> 
     <br>
     <ng-container matColumnDef="delete">
       <th mat-header-cell *matHeaderCellDef mat-sort-header >
         Delete
       </th>
-      <td mat-cell *matCellDef="let element">    <button mat-raised-button color="warn">delete</button> </td>
+      <td mat-cell *matCellDef="let element">    <button mat-raised-button (click)="delete()" color="warn">delete</button> </td>
     </ng-container> 
     <br>
 

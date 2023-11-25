@@ -8,6 +8,7 @@ import { logMessages } from "@angular-devkit/build-angular/src/builders/browser-
 import { establishment } from "../../_core/model/establishment";
 import { MatSort, Sort } from "@angular/material/sort";
 import { LiveAnnouncer } from "@angular/cdk/a11y";
+import { DialogComponent } from 'src/app/_shared/components/dialog/dialog/dialog.component';
 
 
 @Component({
@@ -61,7 +62,22 @@ export class EstablishmentComponent implements OnInit {
     this.displayedColumns = ["id", "name", "email", "ice", "tel", "adresse","update","delete"]
     // ,"adresse" ,"ville"  ,"email"  ,"descc"  ,"web"  ,"ice"  ,"rc"  ,"patente"  ,"cnss"  ,"ifs"  ,"tel"  ,"portable"  ,"banque" ,"agence"  ,"rib"  ,"image"  ,"userId"  ,"createdAt"  ,"updatedAt"   ,"centres"
   }
+  delete(id:number){
+ 
+    const dialogRef = this.dialog.open(DialogComponent);
 
+    dialogRef.afterClosed().subscribe(result => {
+      console.log(`Dialog result: ${result}`);
+    });
+  
+}
+update(establishment:establishment){
+  const dialogRef = this.dialog.open(EstablishmentDialogComponent);
+
+    dialogRef.afterClosed().subscribe(result => {
+      console.log(`Dialog result: ${result}`);
+    });
+}
   openDialog() {
     const dialogRef = this.dialog.open(EstablishmentDialogComponent);
     dialogRef.afterClosed().subscribe((result) => {

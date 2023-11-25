@@ -31,6 +31,7 @@ import { StudentModule } from './student/student.module';
 import { CenterModule } from './center/center.module';
 import { AddSuceesfullyComponent } from './_shared/components/add-suceesfully/add-suceesfully.component';
 import { MatDialogModule } from '@angular/material/dialog';
+import { DialogModule } from './_shared/components/dialog/dialog.module';
 
 
 @NgModule({
@@ -73,6 +74,7 @@ import { MatDialogModule } from '@angular/material/dialog';
     StudentModule,
     CenterModule,
     ClassesModule,
+    DialogModule
 
 
 
