@@ -19,20 +19,11 @@ export class CenterService {
     return this.http.get<Centres[]>(this.url+"findAll");
 
 }
-  saveOrUpdate(data: any) {
+  saveOrUpdate(data: any):Observable<Centres> {
      // this.http.post(this.url+environment+"saveorupdate",data);
      console.log("data sent  : "+data);
 
-     this.http.post(this.url+"saveOrUpdate",data,{
-       headers: new HttpHeaders({
-         'Content-Type': 'application/json',
-       })
-     })
-     .subscribe(response => {
-       console.log('POST request was successful sent and receive a response : ', response);
-     }, error => {
-       console.error('Error during POST request', error);
-     });
+    return  this.http.post<Centres>(this.url+"saveOrUpdate",data);
   }
   deleteById(id: number) {
     throw new Error('Method not implemented.');

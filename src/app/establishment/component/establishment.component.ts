@@ -58,7 +58,7 @@ export class EstablishmentComponent implements OnInit {
       this.dataSource = new MatTableDataSource(data);
       this.dataSource.sort = this.sort;
     })
-    this.displayedColumns = ["id", "name", "email", "ice", "tel", "adresse"]
+    this.displayedColumns = ["id", "name", "email", "ice", "tel", "adresse","update","delete"]
     // ,"adresse" ,"ville"  ,"email"  ,"descc"  ,"web"  ,"ice"  ,"rc"  ,"patente"  ,"cnss"  ,"ifs"  ,"tel"  ,"portable"  ,"banque" ,"agence"  ,"rib"  ,"image"  ,"userId"  ,"createdAt"  ,"updatedAt"   ,"centres"
   }
 
@@ -66,7 +66,7 @@ export class EstablishmentComponent implements OnInit {
     const dialogRef = this.dialog.open(EstablishmentDialogComponent);
     dialogRef.afterClosed().subscribe((result) => {
       if (result) {
-        this.etblishment[0].centers.length
+        
         console.log('Dialog closed with result:', result);
         this.service.saveOrUpdate(result);
         window.location.reload();
