@@ -18,9 +18,10 @@ constructor(public dialogRef: MatDialogRef<PopupAddComponent>,
             private  formBuilder:FormBuilder,
             private dilog:MatDialog) {
   this.classesForm = this.formBuilder.group({
-    id : ['', Validators.required],
+
     name :['', Validators.required],
-    numero:['',Validators.required]
+    numero:['',Validators.required],
+    niveauxId:['', Validators.required]
   })
 }
 

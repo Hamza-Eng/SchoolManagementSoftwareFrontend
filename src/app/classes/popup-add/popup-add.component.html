@@ -3,11 +3,7 @@
   <h1>Add new Class</h1>
 <form class="form-add" [formGroup]="classesForm" (ngSubmit)="onSubmit()">
 
-    <mat-form-field class="example-full-width">
-      <mat-label>id</mat-label>
-      <input placeholder="id" type="text" formControlName="id" matInput>
-      <small *ngIf="classesForm.get('id')?.invalid && classesForm.get('id')?.touched">id required</small>
-    </mat-form-field>
+
     <mat-form-field class="example-full-width">
       <mat-label>Your Name</mat-label>
       <input  placeholder="Name" type="text" formControlName="name" matInput>
@@ -15,6 +11,10 @@
   <mat-form-field class="example-full-width">
     <mat-label>Your numero</mat-label>
     <input  placeholder="Name" type="text" formControlName="numero" matInput>
+  </mat-form-field>
+  <mat-form-field class="example-full-width">
+    <mat-label>Niveau id</mat-label>
+    <input  placeholder="Niveau Id" type="text" formControlName="niveauxId" matInput>
   </mat-form-field>
   <button type="submit" >Submit</button>
 </form>

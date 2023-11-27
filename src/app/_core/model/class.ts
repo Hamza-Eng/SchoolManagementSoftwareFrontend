@@ -6,7 +6,7 @@ export class Classes {
   nom : string = "";
   etudiants: Etudiant = new Etudiant()
   anneeUniver: Date= new Date();
-  niveaux: Niveau = new Niveau();
+  niveauxId: number = 1;
   createdAt :Date  =new Date();
   updatedAt: Date =new Date();
 }
