@@ -1,7 +1,7 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { PeriodicElement } from 'src/app/utility/table/table.component';
 import { MatTableDataSource } from '@angular/material/table';
-import { MatDialog } from '@angular/material/dialog';
+import { MatDialog, MatDialogConfig } from '@angular/material/dialog';
 import { EstablishmentDialogComponent } from '../establishment-dialog/establishment-dialog.component';
 import { EstablishmentService } from '../establishment.service';
 import { logMessages } from "@angular-devkit/build-angular/src/builders/browser-esbuild/esbuild";
@@ -24,6 +24,7 @@ export class EstablishmentComponent implements OnInit {
   }
   dataSource: any;
   displayedColumns: any;
+  establishmentToBeUpdated!: establishment;
   @ViewChild(MatSort)
   sort!: MatSort;
 
@@ -72,7 +73,10 @@ export class EstablishmentComponent implements OnInit {
   
 }
 update(establishment:establishment){
-  const dialogRef = this.dialog.open(EstablishmentDialogComponent);
+  const dialogConfig = new MatDialogConfig();
+  this.establishmentToBeUpdated=establishment;
+  dialogConfig.data = this.establishmentToBeUpdated;
+  const dialogRef = this.dialog.open(EstablishmentDialogComponent,dialogConfig);
 
     dialogRef.afterClosed().subscribe(result => {
       console.log(`Dialog result: ${result}`);

@@ -1,8 +1,14 @@
 <h2 mat-dialog-title>Delete Action !</h2>
-<mat-dialog-content class="mat-typography">
-  <p>do you realt want to delete this item</p>
+<mat-dialog-content class="mat-typography" >
+  <p>Do you really want to delete this item ? 
+    <!-- <mat-icon style="color: red;">delete</mat-icon>  --></p>
 </mat-dialog-content>
 <mat-dialog-actions align="end">
   <button mat-button mat-dialog-close>Cancel</button>
   <button mat-button [mat-dialog-close]="true" color="warn" cdkFocusInitial>Delete</button>
 </mat-dialog-actions>
+<!-- <h1 mat-dialog-title>Delete Action !</h1>
+<div mat-dialog-content>Do you realy want to Delete this Item.</div>
+<div mat-dialog-actions style="float: right;">
+  <button mat-button mat-dialog-close>Close</button>
+</div> -->
