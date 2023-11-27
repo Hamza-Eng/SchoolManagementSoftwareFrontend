@@ -16,7 +16,7 @@ export class ClassesService {
     return  this.http.get<Classes[]>(this.url+"/findAll");
   }
   addClasses(newclass:Classes){
-    return this.http.post<Classes>(this.url+"addclass",newclass);
+    return this.http.post<Classes>(this.url+"/saveOrUpdate",newclass);
 
   }
 }

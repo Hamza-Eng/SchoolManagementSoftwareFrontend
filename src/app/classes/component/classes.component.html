@@ -29,14 +29,13 @@
     <th mat-header-cell *matHeaderCellDef> School Year </th>
     <td mat-cell *matCellDef="let element"> {{element.anneeUniver}} </td>
   </ng-container>
-<!--  <ng-container matColumnDef="Level">-->
-<!--    <th mat-header-cell *matHeaderCellDef> Level </th>-->
-<!--    <td mat-cell *matCellDef="let element"> {{element.niveaux.id}} </td>-->
-<!--  </ng-container>-->
-<!--  <ng-container matColumnDef="etudiant">-->
-<!--    <th mat-header-cell *matHeaderCellDef> Etudiant </th>-->
-<!--    <td mat-cell *matCellDef="let element"> {{element.etudiants.nom}} </td>-->
-<!--  </ng-container>-->
+
+
+  <ng-container matColumnDef="niveau">
+    <th mat-header-cell *matHeaderCellDef> Niveau </th>
+    <td mat-cell *matCellDef="let element"> {{element.niveauxId}} </td>
+  </ng-container>
+
   <ng-container matColumnDef="createdAt">
     <th mat-header-cell *matHeaderCellDef> Created At </th>
     <td mat-cell *matCellDef="let element"> {{element.createdAt}} </td>

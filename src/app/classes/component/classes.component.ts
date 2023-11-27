@@ -4,6 +4,7 @@ import {ClassesService} from "../classes.service";
 import {MatTableDataSource} from "@angular/material/table";
 import {MatDialog} from "@angular/material/dialog";
 import {PopupAddComponent} from "../popup-add/popup-add.component";
+import {Etudiant} from "../../_core/model/etudiant";
 
 @Component({
   selector: 'app-classes',
@@ -22,7 +23,7 @@ export class ClassesComponent implements OnInit{
     this.classesService.getClasses().subscribe(data=>{
       this.classes = data;
       console.log(data);
-      this.displayedColumns= ['id', 'nom', 'schoolYear',  'createdAt', 'updatedAt'];
+      this.displayedColumns= ['id', 'nom', 'schoolYear', 'niveau', 'createdAt', 'updatedAt'];
       this.dataSource = new MatTableDataSource(
         data
       );
@@ -30,6 +31,7 @@ export class ClassesComponent implements OnInit{
     })
 
   }
+  
 
   openDialogToAdd(enterAnimation:any, exiteAnimation:any){
    this.dialog.open(PopupAddComponent,{
