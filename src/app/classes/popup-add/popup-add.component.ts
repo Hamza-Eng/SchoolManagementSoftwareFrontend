@@ -4,6 +4,7 @@ import {ClassesService} from "../classes.service";
 import {FormBuilder, FormGroup, Validators} from "@angular/forms";
 
 import {AddSuceesfullyComponent} from "../../_shared/components/add-suceesfully/add-suceesfully.component";
+import {Classes} from "../../_core/model/class";
 
 
 @Component({
@@ -11,17 +12,19 @@ import {AddSuceesfullyComponent} from "../../_shared/components/add-suceesfully/
   templateUrl: './popup-add.component.html',
   styleUrls: ['./popup-add.component.css']
 })
-export class PopupAddComponent {
+export class PopupAddComponent  implements  OnInit{
   classesForm : FormGroup = new FormGroup({})
 constructor(public dialogRef: MatDialogRef<PopupAddComponent>,
             private classesService: ClassesService,
             private  formBuilder:FormBuilder,
-            private dilog:MatDialog) {
+            private dilog:MatDialog,
+            @Inject(MAT_DIALOG_DATA) private data : Classes) {
   this.classesForm = this.formBuilder.group({
 
-    name :['', Validators.required],
+    nom :['', Validators.required],
     numero:['',Validators.required],
-    niveauxId:['', Validators.required]
+    niveauxId:['', Validators.required],
+
   })
 }
 
@@ -41,6 +44,14 @@ constructor(public dialogRef: MatDialogRef<PopupAddComponent>,
       })
 
     }
+  }
+
+  ngOnInit(): void {
+    console.log(this.data.nom)
+
+
+    this.classesForm.patchValue(this.data)
+    console.log(this.classesForm.value)
   }
 
 }

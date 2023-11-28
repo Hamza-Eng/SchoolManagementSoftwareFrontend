@@ -23,7 +23,7 @@ export class ClassesComponent implements OnInit{
     this.classesService.getClasses().subscribe(data=>{
       this.classes = data;
       console.log(data);
-      this.displayedColumns= ['id', 'nom', 'schoolYear', 'niveau', 'createdAt', 'updatedAt'];
+      this.displayedColumns= ['id', 'nom', 'schoolYear', "Numero",'niveau', 'createdAt', 'updatedAt', "update", "delete"];
       this.dataSource = new MatTableDataSource(
         data
       );
@@ -31,7 +31,7 @@ export class ClassesComponent implements OnInit{
     })
 
   }
-  
+
 
   openDialogToAdd(enterAnimation:any, exiteAnimation:any){
    this.dialog.open(PopupAddComponent,{
@@ -45,5 +45,18 @@ export class ClassesComponent implements OnInit{
      this.classesService.addClasses(newclass).subscribe(()=>{
       console.log("class adedd !")
     })
+  }
+
+  update(data: any): void {
+
+     this.dialog.open(PopupAddComponent, {
+       data,
+    })
+    console.log(data)
+
+  }
+
+  delete(id: number) {
+
   }
 }
