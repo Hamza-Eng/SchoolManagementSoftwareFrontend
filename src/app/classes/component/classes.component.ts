@@ -20,6 +20,10 @@ export class ClassesComponent implements OnInit{
   dataSource :any;
   displayedColumns: any;
   ngOnInit(): void {
+   this.getClasses()
+
+  }
+  getClasses(){
     this.classesService.getClasses().subscribe(data=>{
       this.classes = data;
       console.log(data);
@@ -29,7 +33,6 @@ export class ClassesComponent implements OnInit{
       );
 
     })
-
   }
 
 
@@ -47,13 +50,17 @@ export class ClassesComponent implements OnInit{
     })
   }
 
-  update(data: any): void {
+  update(data: Classes): void {
 
-     this.dialog.open(PopupAddComponent, {
+   const dialogRef =   this.dialog.open(PopupAddComponent, {
        data,
-    })
-    console.log(data)
+    });
+    dialogRef.afterClosed().subscribe({
+      next: (val)=>{
+        this.getClasses()
 
+      }
+    })
   }
 
   delete(id: number) {

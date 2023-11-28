@@ -21,6 +21,7 @@ constructor(public dialogRef: MatDialogRef<PopupAddComponent>,
             @Inject(MAT_DIALOG_DATA) private data : Classes) {
   this.classesForm = this.formBuilder.group({
 
+    id:['', Validators.required],
     nom :['', Validators.required],
     numero:['',Validators.required],
     niveauxId:['', Validators.required],
@@ -30,20 +31,67 @@ constructor(public dialogRef: MatDialogRef<PopupAddComponent>,
 
 
   onSubmit(){
+
+
     if(this.classesForm.valid) {
-      let addedForm = this.classesForm.value;
-      this.classesService.addClasses(addedForm).subscribe({next:()=>{
-        this.dialogRef.close();
-        this.dilog.open(AddSuceesfullyComponent,{
-          width: "256px"
-        });},
-        error:(err)=>{
-        console.log(err)
+      if(this.data){
+        //update our Class
+
+        console.log("iddddddddddd" + this.data.id)
+        let id = this.data.id;
+        if(id){
+          this.classesService.updateClasses(id , this.classesForm.value).subscribe({
+            next: () => {
+
+              this.dialogRef.close();
+              alert("updated")
+              this.dilog.open(AddSuceesfullyComponent, {
+                width: "256px"
+              });
+            },
+            error: (err) => {
+              console.log(err)
+            }
+
+          })
+
+        }else
+        {
+          let addedForm = this.classesForm.value;
+          this.classesService.addClasses(addedForm).subscribe({
+            next: () => {
+              this.dialogRef.close();
+              this.dilog.open(AddSuceesfullyComponent, {
+                width: "256px"
+              });
+            },
+            error: (err) => {
+              console.log(err)
+            }
+
+          })
+
         }
 
-      })
 
+      }else {
+        //add new Class
+        let addedForm = this.classesForm.value;
+        this.classesService.addClasses(addedForm).subscribe({
+          next: () => {
+            this.dialogRef.close();
+            this.dilog.open(AddSuceesfullyComponent, {
+              width: "256px"
+            });
+          },
+          error: (err) => {
+            console.log(err)
+          }
+
+        })
+      }
     }
+
   }
 
   ngOnInit(): void {
