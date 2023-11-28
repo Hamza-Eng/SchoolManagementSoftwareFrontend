@@ -64,6 +64,10 @@ export class ClassesComponent implements OnInit{
   }
 
   delete(id: number) {
+    this.classesService.deleteClasses(id).subscribe({
+      next:()=>this.getClasses()
+
+    })
 
   }
 }

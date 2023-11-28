@@ -21,7 +21,7 @@ constructor(public dialogRef: MatDialogRef<PopupAddComponent>,
             @Inject(MAT_DIALOG_DATA) private data : Classes) {
   this.classesForm = this.formBuilder.group({
 
-    id:['', Validators.required],
+    id:[''],
     nom :['', Validators.required],
     numero:['',Validators.required],
     niveauxId:['', Validators.required],
@@ -37,7 +37,7 @@ constructor(public dialogRef: MatDialogRef<PopupAddComponent>,
       if(this.data){
         //update our Class
 
-        console.log("iddddddddddd" + this.data.id)
+
         let id = this.data.id;
         if(id){
           this.classesService.updateClasses(id , this.classesForm.value).subscribe({

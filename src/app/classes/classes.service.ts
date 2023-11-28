@@ -22,4 +22,7 @@ export class ClassesService {
   updateClasses(id: number , data : Classes){
     return this.http.put<void>(this.url+"/update/"+id, data)
   }
+  deleteClasses(id: number){
+    return this.http.delete(this.url+"/delete/"+id);
+  }
 }
