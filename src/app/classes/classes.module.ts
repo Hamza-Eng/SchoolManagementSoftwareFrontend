@@ -9,6 +9,7 @@ import {MatButtonModule} from "@angular/material/button";
 import { MatDialogModule} from "@angular/material/dialog";
 import {MatInputModule} from "@angular/material/input";
 import {FormsModule, ReactiveFormsModule} from "@angular/forms";
+import {MatSortModule} from "@angular/material/sort";
 
 
 
@@ -17,16 +18,17 @@ import {FormsModule, ReactiveFormsModule} from "@angular/forms";
     ClassesComponent,
     PopupAddComponent
   ],
-  imports: [
-    CommonModule,
-    HttpClientModule,
+    imports: [
+        CommonModule,
+        HttpClientModule,
 
-    MatTableModule,
-    MatButtonModule,
-    MatDialogModule,
-    MatInputModule,
-    ReactiveFormsModule,
-    FormsModule
-  ]
+        MatTableModule,
+        MatButtonModule,
+        MatDialogModule,
+        MatInputModule,
+        ReactiveFormsModule,
+        FormsModule,
+        MatSortModule
+    ]
 })
 export class ClassesModule { }

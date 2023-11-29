@@ -19,4 +19,10 @@ export class ClassesService {
     return this.http.post<Classes>(this.url+"/saveOrUpdate",newclass);
 
   }
+  updateClasses(id: number , data : Classes){
+    return this.http.put<void>(this.url+"/update/"+id, data)
+  }
+  deleteClasses(id: number){
+    return this.http.delete(this.url+"/delete/"+id);
+  }
 }
