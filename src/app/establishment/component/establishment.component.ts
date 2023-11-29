@@ -68,7 +68,12 @@ export class EstablishmentComponent implements OnInit {
     const dialogRef = this.dialog.open(DialogComponent);
 
     dialogRef.afterClosed().subscribe(result => {
-      console.log(`Dialog result: ${result}`);
+     if (result) {
+       this.service.deleteById(id);
+       window.location.reload();
+      
+     }
+    
     });
   
 }
@@ -76,14 +81,16 @@ update(establishment:establishment){
   const dialogConfig = new MatDialogConfig();
   this.establishmentToBeUpdated=establishment;
   dialogConfig.data = this.establishmentToBeUpdated;
-  const dialogRef = this.dialog.open(EstablishmentDialogComponent,dialogConfig);
+  const dialogRef = this.dialog.open(EstablishmentDialogComponent,{
+    data:establishment
+  });
 
     dialogRef.afterClosed().subscribe(result => {
-      console.log(`Dialog result: ${result}`);
+    this.service.saveOrUpdate(result);
     });
 }
   openDialog() {
-    const dialogRef = this.dialog.open(EstablishmentDialogComponent);
+    const dialogRef = this.dialog.open(EstablishmentDialogComponent,);
     dialogRef.afterClosed().subscribe((result) => {
       if (result) {
         
@@ -92,7 +99,7 @@ update(establishment:establishment){
         window.location.reload();
         // Handle the result data from the dialog, e.g., update the dataSource
         // this.dataSource.push(result); // Update dataSource as per your requirements
-      } else {
+      } else {  
         console.log('Dialog closed without result');
       }
 

@@ -39,25 +39,40 @@ export class CenterComponent implements OnInit{
     // "id" ,"nomcentre" ,"adresse" ,"email" ,"tel" ,"content" ,"etablissementId" ,"cycles" ,
   }
 
-delete(){
+delete(id:number){
  
-    const dialogRef = this.dialog.open(DialogComponent);
-
+    const dialogRef = this.dialog.open(DialogComponent);console.log(id);
     dialogRef.afterClosed().subscribe(result => {
-      console.log(`Dialog result: ${result}`);
-    });
+     if (result) {
+       this.service.deleteById(id).subscribe(result=>{
+        console.log(result);
+        window.location.reload();
+        
+      });
+      
+    }
+   
+       
+     
+     
+     });
   
 }
 update(center:Centres){
-  const dialogRef = this.dialog.open(CenterDialogComponent);
+  const dialogRef = this.dialog.open(CenterDialogComponent,{
+    data:center,
+    
+  });
 
     dialogRef.afterClosed().subscribe(result => {
-      console.log(`Dialog result: ${result}`);
+      this.service.saveOrUpdate(result); 
     });
 }
   fetchdata(){
     this.service.findAll().subscribe((data)=>{
       this.centers=data;
+      console.log(data);
+      
       this.dataSource = new MatTableDataSource(this.centers);
       this.dataSource.sort = this.sort;
     },
@@ -71,13 +86,7 @@ update(center:Centres){
     const dialogRef = this.dialog.open(CenterDialogComponent);
     
     dialogRef.afterClosed().subscribe(result => {
-      this.service.saveOrUpdate(result).subscribe((data)=>{
-        this.openSnackBar("establishment added ","hide","#880808");
-      },(error) => {
-        console.error('Error:', error);
-        this.openSnackBar("Unknew errro ","hide","#42ED03");
-        // Handle error response (status code 500 or other error codes)
-      });
+      this.service.saveOrUpdate(result);
     });
   }
 

@@ -19,14 +19,14 @@ export class CenterService {
     return this.http.get<Centres[]>(this.url+"findAll");
 
 }
-  saveOrUpdate(data: any):Observable<Centres> {
-     // this.http.post(this.url+environment+"saveorupdate",data);
-     console.log("data sent  : "+data);
-
-    return  this.http.post<Centres>(this.url+"saveOrUpdate",data);
+  saveOrUpdate(data: Centres) {
+    //  return this.http.post<Centres>(this.url+environment+"saveOrUpdate",data);
+    
+  
   }
-  deleteById(id: number) {
-    throw new Error('Method not implemented.');
+  deleteById(id: number):Observable<boolean> {
+     return this.http.delete<boolean>("http://localhost:8060/center/delete/"+id);
+    
   }
   deleteAll() {
     throw new Error('Method not implemented.');

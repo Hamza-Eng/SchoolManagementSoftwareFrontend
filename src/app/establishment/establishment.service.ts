@@ -28,7 +28,7 @@ export class EstablishmentService {
       // this.http.post(this.url+environment+"saveorupdate",data);
       console.log("data sent  : "+data);
 
-      this.http.post("http://localhost:8060/etablissement/saveorupdate",data,{
+      this.http.post(this.url+"saveorupdate",data,{
         headers: new HttpHeaders({
           'Content-Type': 'application/json',
         })
@@ -40,7 +40,12 @@ export class EstablishmentService {
       });
     }
   deleteById(id: number) {
-
+     return this.http.delete("http://localhost:8060/etablissement/delete/"+id)
+    .subscribe(response => {
+      console.log('delete request was successful sent and receive a response : ', response);
+    }, error => {
+      console.error('Error during POST request', error);
+    });
   }
   deleteAll() {
 
