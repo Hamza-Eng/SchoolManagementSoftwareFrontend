@@ -39,10 +39,11 @@ export class EstablishmentService {
         console.error('Error during POST request', error);
       });
     }
-  deleteById(id: number) {
+  deleteById(id: number)  {
      return this.http.delete("http://localhost:8060/etablissement/delete/"+id)
     .subscribe(response => {
-      console.log('delete request was successful sent and receive a response : ', response);
+      // console.log('delete request was successful sent and receive a response : ', response);
+      console.log('Response of deletion :', response);
     }, error => {
       console.error('Error during POST request', error);
     });

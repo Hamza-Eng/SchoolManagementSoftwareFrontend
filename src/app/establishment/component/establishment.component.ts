@@ -17,7 +17,7 @@ import { DialogComponent } from 'src/app/_shared/components/dialog/dialog/dialog
   styleUrls: ['./establishment.component.css']
 })
 export class EstablishmentComponent implements OnInit {
-  etblishment: establishment[] = [];
+  establishment: establishment[] = [];
   // const ELEMENT_DATA: establishment[] = this.service.findAll();
   constructor(private _liveAnnouncer: LiveAnnouncer, public dialog: MatDialog, private service: EstablishmentService) {
 
@@ -56,12 +56,17 @@ export class EstablishmentComponent implements OnInit {
 
     this.service.findAll().subscribe(data => {
       console.log(data)
-      this.etblishment = data;
+      this.establishment = data;
       this.dataSource = new MatTableDataSource(data);
       this.dataSource.sort = this.sort;
     })
     this.displayedColumns = ["id", "name", "email", "ice", "tel", "adresse","update","delete"]
     // ,"adresse" ,"ville"  ,"email"  ,"descc"  ,"web"  ,"ice"  ,"rc"  ,"patente"  ,"cnss"  ,"ifs"  ,"tel"  ,"portable"  ,"banque" ,"agence"  ,"rib"  ,"image"  ,"userId"  ,"createdAt"  ,"updatedAt"   ,"centres"
+  }
+
+  refresh(id:number){
+    this.establishment = this.establishment.filter(e => e.id !== id);
+    this.dataSource = new MatTableDataSource(this.establishment);
   }
   delete(id:number){
  
@@ -69,8 +74,12 @@ export class EstablishmentComponent implements OnInit {
 
     dialogRef.afterClosed().subscribe(result => {
      if (result) {
-       this.service.deleteById(id);
-       window.location.reload();
+     if (  this.service.deleteById(id)) {
+       this.refresh(id);
+      
+     }
+      
+      
       
      }
     
