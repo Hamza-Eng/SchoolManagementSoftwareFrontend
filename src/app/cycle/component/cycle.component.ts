@@ -2,7 +2,9 @@ import { LiveAnnouncer } from '@angular/cdk/a11y';
 import { Component, ViewChild , OnInit } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
 import { MatSort, Sort } from '@angular/material/sort';
+import { MatTableDataSource } from '@angular/material/table';
 import { cycle } from 'src/app/_core/model/cycle';
+import { DialogComponent } from 'src/app/_shared/components/dialog/dialog/dialog.component';
 import { CycleService } from '../cycle.service';
 
 @Component({
@@ -20,17 +22,8 @@ export class CycleComponent implements OnInit {
   cycles: cycle[] = [];
   @ViewChild(MatSort)
   sort!: MatSort;
-
-  // ngAfterViewInit() {
-  //   this.dataSource.sort = this.sort;
-  // }
-
-  /** Announce the change in sort state for assistive technology. */
   announceSortChange(sortState: Sort) {
-    // This example uses English messages. If your application supports
-    // multiple language, you would internationalize these strings.
-    // Furthermore, you can customize the message to add additional
-    // details about the values being sorted.
+
     if (sortState.direction) {
       this._liveAnnouncer.announce(`Sorted ${sortState.direction}ending`);
     } else {
@@ -47,35 +40,41 @@ export class CycleComponent implements OnInit {
   }
   ngOnInit(): void {
 
-    // this.service.findAll().subscribe(data => {
-    //   console.log(data)
-    //   this.cycles = data;
-    //   this.dataSource = new MatTableDataSource(data);
-    //   this.dataSource.sort = this.sort;
-    // })
-    this.displayedColumns = ["id", "name", "email", "ice", "tel", "adresse","update","delete"]
-    // ,"adresse" ,"ville"  ,"email"  ,"descc"  ,"web"  ,"ice"  ,"rc"  ,"patente"  ,"cnss"  ,"ifs"  ,"tel"  ,"portable"  ,"banque" ,"agence"  ,"rib"  ,"image"  ,"userId"  ,"createdAt"  ,"updatedAt"   ,"centres"
+    this.service.findAll().subscribe(data => {
+      console.log(data)
+      this.cycles = data;
+      this.dataSource = new MatTableDataSource(data);
+      this.dataSource.sort = this.sort;
+    })
+
+    this.displayedColumns = ["id","name","description","createdAt","update","delete"];
+    this.dataSource.sort = this.sort;
+  
   }
 
+  update(cycle:cycle){
+    // const dialogConfig = new MatDialogConfig();
+    // this.establishmentToBeUpdated=establishment;
+    // dialogConfig.data = this.establishmentToBeUpdated;
+    // const dialogRef = this.dialog.open(EstablishmentDialogComponent,{
+    //   data:establishment
+    // });
+  
+    //   dialogRef.afterClosed().subscribe(result => {
+    //   this.service.saveOrUpdate(result);
+    //   });
+  }
   refresh(id:number){
     // this.cycles = this.cycles.filter(e => e.id !== id);
     // this.dataSource = new MatTableDataSource(this.cycles);
   }
   delete(id:number){
  
-    // const dialogRef = this.dialog.open(DialogComponent);
+    const dialogRef = this.dialog.open(DialogComponent);
 
-    // dialogRef.afterClosed().subscribe(result => {
-    //  if (result) {
-    //  if (  this.service.deleteById(id)) {
-    //    this.refresh(id);
-      
-    //  }
-      
-      
-      
-     }
-    
+    dialogRef.afterClosed().subscribe(result => {})}
+   
+
 
 
   openDialog() {
