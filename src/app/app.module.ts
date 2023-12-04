@@ -65,7 +65,7 @@ import { CycleModule } from './cycle/cycle.module';
     BrowserAnimationsModule,
     MatAutocompleteModule,
     MatButtonModule,
-  
+    
 
 
     MatSidenavModule,
