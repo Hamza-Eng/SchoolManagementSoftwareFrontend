@@ -8,14 +8,14 @@ import { EstablishmentComponent } from './establishment/component/establishment.
 import { StudentComponent } from './student/component/student.component';
 
 const routes: Routes = [
-  {path:"home",redirectTo : "/"},
+  
   {path:"center",component:CenterComponent},
   {path:"cycle",component:CycleComponent},
   {path:"student",component:StudentComponent},
   {path:"class",component:ClassesComponent},
   {path:"establishment",component:EstablishmentComponent},
   {path:"branch",component:BranchComponent},
-  {path:"**",redirectTo : "home"},
+  {path:"**",redirectTo: "/establishment"},
 
 ];
 
