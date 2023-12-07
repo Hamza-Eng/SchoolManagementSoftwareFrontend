@@ -1,0 +1,1 @@
+npm install && git checkout develop && git pull && code . && npm start && pause
