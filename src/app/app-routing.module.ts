@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { BranchComponent } from './branch/component/branch.component';
+import { CalendaryComponent } from './calenary/calendary/calendary.component';
 import { CenterComponent } from './center/component/center.component';
 import { ClassesComponent } from './classes/component/classes.component';
 import { CycleComponent } from './cycle/component/cycle.component';
@@ -15,6 +16,7 @@ const routes: Routes = [
   {path:"class",component:ClassesComponent},
   {path:"establishment",component:EstablishmentComponent},
   {path:"branch",component:BranchComponent},
+  {path:"calendar",component:CalendaryComponent},
   {path:"**",redirectTo: "/establishment"},
 
 ];

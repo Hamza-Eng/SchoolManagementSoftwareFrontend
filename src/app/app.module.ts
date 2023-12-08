@@ -33,6 +33,8 @@ import { AddSuceesfullyComponent } from './_shared/components/add-suceesfully/ad
 import { MatDialogModule } from '@angular/material/dialog';
 import { DialogModule } from './_shared/components/dialog/dialog.module';
 import { CycleModule } from './cycle/cycle.module';
+import { FullCalendarModule } from '@fullcalendar/angular';
+import { CalenaryModule } from './calenary/calenary.module';
 
 
 @NgModule({
@@ -76,7 +78,8 @@ import { CycleModule } from './cycle/cycle.module';
     CenterModule,
     ClassesModule,
     DialogModule,
-    
+    // FullCalendarModule ,// register FullCalendar with your app
+    CalenaryModule,
 
 
 
