@@ -1,10 +1,11 @@
 import { LiveAnnouncer } from '@angular/cdk/a11y';
 import { Component, ViewChild , OnInit } from '@angular/core';
-import { MatDialog } from '@angular/material/dialog';
+import { MatDialog, MatDialogConfig } from '@angular/material/dialog';
 import { MatSort, Sort } from '@angular/material/sort';
 import { MatTableDataSource } from '@angular/material/table';
 import { cycle } from 'src/app/_core/model/cycle';
 import { DialogComponent } from 'src/app/_shared/components/dialog/dialog/dialog.component';
+import { CycleDialogComponent } from '../cycle-dialog/cycle-dialog.component';
 import { CycleService } from '../cycle.service';
 
 @Component({
@@ -18,6 +19,7 @@ export class CycleComponent implements OnInit {
   }
   dataSource: any;
   displayedColumns: any;
+  cycleToBeUpdated: cycle=new cycle();
  
   cycles: cycle[] = [];
   @ViewChild(MatSort)
@@ -44,25 +46,29 @@ export class CycleComponent implements OnInit {
       console.log(data)
       this.cycles = data;
       this.dataSource = new MatTableDataSource(data);
+   
       this.dataSource.sort = this.sort;
     })
 
     this.displayedColumns = ["id","name","description","createdAt","update","delete"];
-    this.dataSource.sort = this.sort;
+  
   
   }
 
   update(cycle:cycle){
-    // const dialogConfig = new MatDialogConfig();
-    // this.establishmentToBeUpdated=establishment;
-    // dialogConfig.data = this.establishmentToBeUpdated;
-    // const dialogRef = this.dialog.open(EstablishmentDialogComponent,{
-    //   data:establishment
-    // });
+    const dialogConfig = new MatDialogConfig();
+    this.cycleToBeUpdated=cycle;
+    dialogConfig.data = this.cycleToBeUpdated;
+    const dialogRef = this.dialog.open(CycleDialogComponent,{
+      data:cycle
+    });
   
-    //   dialogRef.afterClosed().subscribe(result => {
-    //   this.service.saveOrUpdate(result);
-    //   });
+      dialogRef.afterClosed().subscribe(result => {
+        if (result) {
+          this.service.saveOrUpdate(result);
+          window.location.reload();
+        }
+      });
   }
   refresh(id:number){
     // this.cycles = this.cycles.filter(e => e.id !== id);
@@ -72,7 +78,12 @@ export class CycleComponent implements OnInit {
  
     const dialogRef = this.dialog.open(DialogComponent);
 
-    dialogRef.afterClosed().subscribe(result => {})}
+    dialogRef.afterClosed().subscribe(result => {
+      if (result) {
+        this.service.deleteById(id);
+          window.location.reload();
+      }
+    })}
    
 
 

@@ -2,6 +2,7 @@ import { Component , Inject, OnInit} from '@angular/core';
 import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
 import { EstablishmentService } from 'src/app/establishment/establishment.service';
 import { Centres } from 'src/app/_core/model/Centres';
+import { cycle } from 'src/app/_core/model/cycle';
 import { establishment } from 'src/app/_core/model/establishment';
 
 @Component({
@@ -23,6 +24,7 @@ if (data!=null) {
   }
   formData: Centres =new Centres(); 
   onSubmit(){
+    
     this.dialog.close(this.formData);
     console.log('Form submitted:', this.formData);
     // this.openSnackBar("establishment added ","hide");

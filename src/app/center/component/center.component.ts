@@ -37,18 +37,12 @@ delete(id:number){
     const dialogRef = this.dialog.open(DialogComponent);console.log(id);
     dialogRef.afterClosed().subscribe(result => {
      if (result) {
-     if (  this.service.deleteById(id)) {
-      this.refresh(id);
+      this.service.deleteById(id)
+      console.log("hello from delete");
       
-     };
-
-      
-    }
-   
-       
-     
-     
-     });
+      window.location.reload();
+     }});
+        
   
 }
 update(center:Centres){
@@ -58,6 +52,8 @@ update(center:Centres){
   });
 
     dialogRef.afterClosed().subscribe(result => {
+      console.log(result);
+      
       this.service.saveOrUpdate(result); 
     });
 }

@@ -1,1 +1,33 @@
-<p>cycle-dialog works!</p>
+<h2 mat-dialog-title>Add new establishment</h2>
+<div class="container">
+  <form   (ngSubmit)="onSubmit()" >
+   
+    <mat-dialog-content  class="mat-typography">
+      <mat-form-field>
+        <mat-label>Name</mat-label>
+        <input matInput name="name"  #nameInput="ngModel"  [(ngModel)]="formData.name" pattern="[a-zA-Z ]+" required>
+        <mat-error *ngIf="nameInput.hasError('required')">Name is required</mat-error>
+        <mat-error *ngIf="nameInput.hasError('pattern')">Invalid characters in Name (only letters allowed)</mat-error>
+      
+      </mat-form-field>
+      <br>
+      <mat-form-field>
+        <mat-label>Description</mat-label>
+       <input type="email" matInput name="description"    [(ngModel)]="formData.description" required>
+      </mat-form-field>
+      <br>
+      <mat-form-field>
+        <mat-label>Select centre</mat-label>
+        <mat-select name="establishment" [(ngModel)]="formData.centreId" #nameInput="ngModel" >
+          <!-- <mat-option *ngFor="let  element of etablishment" value="{{element.id}}">{{element.name}}</mat-option> -->
+         
+        </mat-select>
+      </mat-form-field>
+    
+    </mat-dialog-content>
+    <mat-dialog-actions align="end">
+      <button mat-button mat-dialog-close  >Cancel</button>
+      <button mat-button    type="submit" cdkFocusInitial >Add/Update</button>
+    </mat-dialog-actions>
+    </form>
+</div>

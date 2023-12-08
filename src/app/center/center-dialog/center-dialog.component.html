@@ -6,7 +6,7 @@
 
       <mat-form-field>
         <mat-label>Name</mat-label>
-        <input matInput name="name" #nameInput="ngModel" [(ngModel)]="formData.nomcentre" pattern="[a-zA-Z ]+" required>
+        <input matInput name="nomcentre" #nameInput="ngModel" [(ngModel)]="formData.nomcentre" pattern="[a-zA-Z ]+" required>
         <mat-error *ngIf="nameInput.hasError('required')">Name is required</mat-error>
         <mat-error *ngIf="nameInput.hasError('pattern')">Invalid characters in Name (only letters allowed)</mat-error>
 
@@ -14,7 +14,7 @@
       <br>
       <mat-form-field>
         <mat-label>Adresse</mat-label>
-        <input matInput name="name" #nameInput="ngModel" [(ngModel)]="formData.adresse" required>
+        <input matInput name="adresse" #nameInput="ngModel" [(ngModel)]="formData.adresse" required>
         <mat-error *ngIf="nameInput.hasError('required')">Adresse is required</mat-error>
         <mat-error *ngIf="nameInput.hasError('pattern')">Invalid characters in Adresse (only letters allowed)</mat-error>
 
@@ -22,7 +22,7 @@
       <br>
       <mat-form-field>
         <mat-label>Email</mat-label>
-        <input matInput name="name" #nameInput="ngModel" [(ngModel)]="formData.email"  required>
+        <input matInput name="email" #nameInput="ngModel" [(ngModel)]="formData.email"  required>
         <mat-error *ngIf="nameInput.hasError('required')">Email is required</mat-error>
        
 
@@ -54,7 +54,7 @@
 
     <mat-dialog-actions align="end">
       <button mat-button mat-dialog-close>Cancel</button>
-      <button mat-button type="submit" cdkFocusInitial>Add</button>
+      <button mat-button type="submit" cdkFocusInitial>Add/Update</button>
     </mat-dialog-actions>
   </form>
 </div>
