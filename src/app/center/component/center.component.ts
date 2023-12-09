@@ -38,8 +38,7 @@ delete(id:number){
     dialogRef.afterClosed().subscribe(result => {
      if (result) {
       this.service.deleteById(id)
-      console.log("hello from delete");
-      
+      console.log("hello from delete");      
       window.location.reload();
      }});
         
@@ -55,6 +54,7 @@ update(center:Centres){
       console.log(result);
       
       this.service.saveOrUpdate(result); 
+      window.location.reload();
     });
 }
   fetchdata(){
